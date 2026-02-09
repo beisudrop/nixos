@@ -18,7 +18,7 @@ in {
     rofi
     mpv
     reaper
-    wal
+    pywal
     hellwal
     # Hyprland essentials:
     swaylock-effects
