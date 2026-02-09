@@ -20,6 +20,6 @@
     ./kitty.nix
     ./alacritty.nix
     ./rofi
-    ./yabridge.nix
+    # ./yabridge.nix
   ];  
 }
