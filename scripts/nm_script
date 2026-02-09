@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+sudo nmcli connection modify "Kabelgebundene Verbindung 1" ipv6.method "disabled"
+sleep 1
+nmcli networking off
+sleep 1
+nmcli networking on
+exit 0
