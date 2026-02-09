@@ -16,7 +16,7 @@ in  {
   material-icons
   ];
 
-  hardware.enableAllFirmware = true;  # Enable all firmware support, for microcode, idk if needed
+  hardware.enableAllFirmware = true;  # Enable all firmware support, for microcode, idk if needed. redistributable firmware is in hardware-configuration.nix
 
 #  services.displayManager.sddm.wayland.enable = true;
 #  services.displayManager.sddm.enable = true;
@@ -155,6 +155,7 @@ in  {
     hellwal
     #restliche packages in /modules
     kdePackages.breeze-icons
+    material-icons
     python3
   ];
 

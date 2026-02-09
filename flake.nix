@@ -43,9 +43,14 @@
     };
     nixosConfigurations.zelel = mkHost {
       name = "zelel";
-      user = "amsel";
+      user = "beisu";
       # system = "aarch64-linux";  # Overrides the default (example)
       homeModule = import ./zelel/modules;
+    };
+    nixosConfigurations.tapris = mkHost {
+      name = "tapris";
+      user = "amsel";
+      homeModule = import ./tapris/modules;
     };
   };   
 }   

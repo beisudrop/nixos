@@ -7,7 +7,6 @@
   services.cliphist.enable = true;
   services.swayidle.enable = true;
   # services.sunshine.enable = true;
-  programs.vesktop.enable = true;
   programs.quickshell.enable = true;
   qt.enable = true;
 
@@ -23,6 +22,7 @@
     ./hellwal
     #./kdeconnect.nix
     ./kitty.nix
+    ./lutris.nix
     ./mako.nix
     ./niri
     #./quickshell
