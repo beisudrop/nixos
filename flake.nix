@@ -12,9 +12,12 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, lanzaboote, musnix, home-manager, ... }: 
+  outputs = inputs@{ nixpkgs, lanzaboote, musnix, home-manager, spicetify-nix, ... }: 
   let
     mkHost = { name, user, system ? "x86_64-linux", homeModule }: 
       nixpkgs.lib.nixosSystem {
@@ -27,10 +30,16 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${user} = homeModule;
+            home-manager.users.${user} = {
+              imports = [
+                inputs.spicetify-nix.homeManagerModules.spicetify
+                homeModule
+              ];
+            };
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
           ({pkgs, ...}: {
-            nixpkgs.overlays = [ (import ./overlays/spotx.nix) ];
+          #  nixpkgs.overlays = [ (import ./overlays/spotx.nix) ];
           })
         ];
         specialArgs = { inherit inputs; };

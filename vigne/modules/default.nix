@@ -24,30 +24,32 @@
     ./kitty.nix
     ./lutris.nix
     ./mako.nix
+    ./neovim
     ./niri
     #./quickshell
+    ./spicetify.nix
     ./vesktop
     ./yazi.nix
     ./zsh
   ];
 
   home.packages = with pkgs; [
-    pwvucontrol
+    opencode
+    pwvucontrol #pipewire volume
     imagemagick
     ffmpeg
     vscode-fhs
-    perl #spotify
+    perl #für spotx
     unzip
     winetricks
     eza #ls
     fzf #fuzzy
     mpv
-    spotify
     wget
     curl
     nil #nix language server
     tesseract #ocr
-    sabnzbd
+    sabnzbd #nzb download
     #wob volume overlay
     unrar
     xz #compression
@@ -56,11 +58,10 @@
     fd #find
     ripgrep #grep
     zoxide #cd
-    resvg
+    resvg #svg support
     qt6Packages.qt6ct #qt control center
     # Audio
     reaper
-    guitarix
     yabridge
     yabridgectl
     wineWowPackages.yabridge
