@@ -8,6 +8,9 @@
     plugins = with pkgs.vimPlugins; [
       transparent-nvim
     ];
+    extraConfig = ''
+      set clipboard+=unnamedplus 
+    '';
     coc = {
       enable = true;
       settings = {

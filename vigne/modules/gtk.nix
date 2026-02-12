@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   gtk = {
@@ -6,8 +6,8 @@
     theme.package = with pkgs; dracula-theme;
     theme.name = "Dracula";
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.dracula-icon-theme;
+      name = "Dracula";
     };
   };
 }

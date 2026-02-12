@@ -1,4 +1,4 @@
-{pkgs, lib, config, inputs, ...}:
+{ pkgs, ...}:
 
 {
   services.network-manager-applet.enable = true;
