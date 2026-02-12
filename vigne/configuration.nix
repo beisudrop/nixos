@@ -1,10 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   vars = import ./vars.nix;
 in  {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
     ];
 
@@ -12,8 +12,8 @@ in  {
   nerd-fonts.meslo-lg
   noto-fonts-cjk-serif
   source-han-sans
-  material-symbols
-  material-icons
+  # material-symbols
+  # material-icons
   ];
 
   hardware.enableAllFirmware = true;  # Enable all firmware support, for microcode, idk if needed. redistributable firmware is in hardware-configuration.nix
@@ -113,7 +113,6 @@ in  {
     enable = true;
     dates = "weekly";
     flake = inputs.self.outPath;
-    #operation = "boot";
     flags = [
       "--recreate-lock-file"
     ];
@@ -149,42 +148,37 @@ in  {
   programs.appimage.binfmt = true;
 
   environment.systemPackages = with pkgs; [
-    microcode-amd #idk if needed
     osu-lazer-bin
     yt-dlp
     hellwal
-    #restliche packages in /modules
     kdePackages.breeze-icons
     material-icons
+    material-symbols
     python3
   ];
 
   environment.sessionVariables = {
     # NIXOS_OZONE_WL = "1"; #unnötig maybe?
-    # noctalia shell
+    # quickshell
     QT_QPA_PLATFORM= "wayland;xcb";
     QT_QPA_PLATFORMTHEME="qt6ct";
     QT_AUTO_SCREEN_SCALE_FACTOR="1";
-    QS_ICON_THEME="Adwaita";
   };
 
   services.xserver.enable = true;
   hardware.graphics.enable = true;
   xdg.portal = {
     enable = true;
-#    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
-    wlr.enable = true;  # Key for wlroots compositors like Niri
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    wlr.enable = true; 
   };
 
   # services.openssh.enable = true;
   services.libinput.mouse.accelProfile = "flat";
   services.playerctld.enable = true;
 
-  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
 
   system.stateVersion = "25.11"; # Did you read the comment?
