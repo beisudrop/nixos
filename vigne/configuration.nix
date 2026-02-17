@@ -111,7 +111,7 @@ in  {
   };
   system.autoUpgrade = {
     enable = true;
-    dates = "weekly";
+    dates = "Sun 05:00";
     flake = inputs.self.outPath;
     flags = [
       "--recreate-lock-file"
@@ -181,6 +181,6 @@ in  {
   # networking.firewall.allowedUDPPorts = [ ... ];
 
 
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 
 }
