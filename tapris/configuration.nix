@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 let
   vars = import ./vars.nix;
 in 
@@ -25,9 +25,9 @@ in
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.r8168 ];
-  boot.blacklistedKernelModules = [ "r8169" ];
-  nixpkgs.config.allowBroken = true;
+  # boot.extraModulePackages = [ config.boot.kernelPackages.r8168 ];
+  # boot.blacklistedKernelModules = [ "r8169" ];
+  # nixpkgs.config.allowBroken = true;
 
   networking.hostName = "${vars.hostName}";
 
@@ -50,11 +50,11 @@ in
 
   services.xserver = {
     enable = true;
-    windowManager.qtile.enable = false;
+    # windowManager.qtile.enable = false;
     xkb.layout = "de";
   };
 
-  security.rtkit.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -82,8 +82,8 @@ in
   security.polkit.enable = true;
 
   services = {
-    dbus.enable = true;
-    gvfs.enable = true;    # Mounting devices
+    # dbus.enable = true;
+    # gvfs.enable = true;    # Mounting devices
   };
 
   environment.sessionVariables = {
@@ -97,7 +97,35 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.enable = true;
+  
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+	      command = "uwsm start -eD Hyprland hyprland.desktop";   
+	      user = "${vars.userName}";
+      };
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";   
+        user = "greeter";
+      };
+    };
+  };
+
+  systemd = {
+    # To prevent getting stuck at shutdown
+    settings.Manager.DefaultTimeoutStopSec = "10s";
+    services.greetd.serviceConfig = {
+      Type = "idle";
+      StandardInput = "tty";
+      StandardOutput = "tty";
+      StandardError = "journal";
+      TTYReset = true;
+      TTYVHangup = true;
+      TTYVTDisallocate = true;
+    };
+  };
 
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
@@ -113,18 +141,17 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    tree
-  ];
+#  environment.systemPackages = with pkgs; [
+#  ];
 
   services.openssh = {
     enable = true;
-    settings.X11Forwarding = true;
-    settings.X11UseLocalhost = false;
+    # settings.X11Forwarding = true;
+    # settings.X11UseLocalhost = false;
   };
 
-  programs.ydotool.enable = true;
-  programs.ydotool.group = "network";
+  # programs.ydotool.enable = true;
+  # programs.ydotool.group = "network";
   programs.nix-ld.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
@@ -140,9 +167,9 @@ in
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
-  musnix.enable = true;
+  musnix.enable = false; # cpu performance governor
 
-  networking.firewall.allowedTCPPorts = [ 22 443 ];
+  networking.firewall.allowedTCPPorts = [ 22 ]; #443
   networking.firewall.allowedTCPPortRanges = [ { from = 1717;
                                                  to = 1764; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 1717;

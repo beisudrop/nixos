@@ -7,6 +7,7 @@
     viAlias = true;
     plugins = with pkgs.vimPlugins; [
       transparent-nvim
+      nvim-treesitter
     ];
     extraConfig = ''
       set clipboard+=unnamedplus 

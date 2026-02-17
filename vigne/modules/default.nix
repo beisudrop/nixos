@@ -5,6 +5,10 @@
   programs.btop.enable = true;
   services.swww.enable = true;
   services.cliphist.enable = true;
+  services.cliphist.extraOptions = [
+    "-max-items"
+    "5"
+  ];
   services.swayidle.enable = true;
   # services.sunshine.enable = true;
   programs.quickshell.enable = true;
@@ -20,13 +24,11 @@
     ./ghostty.nix
     ./gtk.nix
     ./hellwal
-    #./kdeconnect.nix
     ./kitty.nix
     ./lutris.nix
     ./mako.nix
     ./neovim
     ./niri
-    #./quickshell
     ./spicetify.nix
     ./vesktop
     ./yazi.nix
@@ -34,37 +36,37 @@
   ];
 
   home.packages = with pkgs; [
-    opencode
-    pwvucontrol #pipewire volume
-    imagemagick
-    ffmpeg
-    vscode-fhs
-    perl #für spotx
-    unzip
-    winetricks
-    eza #ls
-    fzf #fuzzy
-    mpv
-    wget
-    curl
-    nil #nix language server
-    tesseract #ocr
-    sabnzbd #nzb download
     #wob volume overlay
-    unrar
-    xz #compression
-    jq #json processor
-    poppler #pdf rendering
+    curl
+    eza #ls
     fd #find
-    ripgrep #grep
-    zoxide #cd
-    resvg #svg support
+    ffmpeg
+    fzf #fuzzy
+    imagemagick
+    jq #json processor
+    mpv
+    nil #nix language server
+    opencode
+    perl #für spotx
+    poppler #pdf rendering
+    pwvucontrol #pipewire volume
     qt6Packages.qt6ct #qt control center
+    resvg #svg support
+    ripgrep #grep
+    sabnzbd #nzb download
+    tesseract #ocr
+    unrar
+    unzip
+    vscode-fhs
+    wget
+    winetricks
+    xz #compression
+    zoxide #cd
     # Audio
     reaper
-    yabridge
-    yabridgectl
-    wineWowPackages.yabridge
+    # yabridge
+    # yabridgectl
+    # wineWow64Packages.yabridge
     # Niri
     xwayland-satellite
     wl-clipboard

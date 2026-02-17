@@ -110,18 +110,6 @@ workspace "alpha-browser"   // For Firefox - Mod+1
 workspace "beta-terminal"   // For Kitty - Mod+2  
 workspace "gamma-music"     // For Spotify - Mod+3
 
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-
-
-// Remove open-on-workspace rules since they don't work reliably
-// Windows will be manually positioned using keyboard shortcuts
-
 window-rule {
     match app-id="firefox" title="Picture-in-Picture"
     open-floating true
@@ -133,7 +121,6 @@ window-rule {
     open-on-workspace "alpha-browser"
 }
 
-// Open Kitty on workspace "terminal"
 window-rule {
     match app-id="kitty"
     match at-startup=true
@@ -167,7 +154,17 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="steam"
+    match title=r#"^Friends List$"#
+    open-floating true
+}   
 
+window-rule {
+    match app-id="steam"
+    match title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}   
 
 binds {
     // Most actions that you can bind here can also be invoked programmatically with
@@ -195,9 +192,10 @@ binds {
     // Example media keys mapping using playerctl.
     // This will work with any MPRIS-enabled media player.
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Super+Insert         allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    Super+Delete         allow-when-locked=true { spawn-sh "playerctl previous"; }
+    Super+End            allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
@@ -324,11 +322,9 @@ Mod+6 { focus-workspace 6; }
 Mod+7 { focus-workspace 7; }
 Mod+8 { focus-workspace 8; }
 Mod+9 { focus-workspace 9; }
-// Named workspace move shortcuts
 Mod+Ctrl+1 { move-column-to-workspace "alpha-browser"; }
 Mod+Ctrl+2 { move-column-to-workspace "beta-terminal"; }
 Mod+Ctrl+3 { move-column-to-workspace "gamma-music"; }
-// Fallback to numbered workspaces for 4-9
 Mod+Ctrl+4 { move-column-to-workspace 4; }
 Mod+Ctrl+5 { move-column-to-workspace 5; }
 Mod+Ctrl+6 { move-column-to-workspace 6; }
