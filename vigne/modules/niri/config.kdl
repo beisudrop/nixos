@@ -86,7 +86,7 @@ layout {
     }
 }
 
-spawn-at-startup "qs" "-p" "/home/tobias/quickshell/noctalia-shell/shell.qml"
+// spawn-at-startup "qs" "-p" "/home/tobias/quickshell/noctalia-shell/shell.qml"
 
 spawn-sh-at-startup "~/nixos/scripts/random-wallpaper.sh &"
 
@@ -106,26 +106,26 @@ animations {
 }
 
 // Define named workspaces - ordered alphabetically to ensure correct positioning
-workspace "alpha-browser"   // For Firefox - Mod+1
-workspace "beta-terminal"   // For Kitty - Mod+2  
-workspace "gamma-music"     // For Spotify - Mod+3
+// workspace "alpha-browser"   // For Firefox - Mod+1
+// workspace "beta-terminal"   // For Kitty - Mod+2  
+// workspace "gamma-music"     // For Spotify - Mod+3
 
 window-rule {
     match app-id="firefox" title="Picture-in-Picture"
     open-floating true
 }
 
-window-rule {
-    match app-id="firefox"
-    match at-startup=true
-    open-on-workspace "alpha-browser"
-}
+// window-rule {
+//     match app-id="firefox"
+//     match at-startup=true
+//     open-on-workspace "alpha-browser"
+// }
 
-window-rule {
-    match app-id="kitty"
-    match at-startup=true
-    open-on-workspace "beta-terminal"
-}
+// window-rule {
+//     match app-id="kitty"
+//     match at-startup=true
+//     open-on-workspace "beta-terminal"
+// }
 
 // Example: block out two password managers from screen capture.
 /-window-rule {
@@ -136,29 +136,29 @@ window-rule {
 }
 
 // Open Spotify on workspace "music"
-window-rule {
-    match app-id="spotify"
-    match at-startup=true
-    open-on-workspace "gamma-music"
-}
+// window-rule {
+//     match app-id="spotify"
+//     match at-startup=true
+//     open-on-workspace "gamma-music"
+// }
 
 // Additional Spotify rule for spicetify and other variations
-window-rule {
-    match app-id=r#"^.*[Ss]potify.*$"#
-    match at-startup=true
-    open-on-workspace "gamma-music"
-}
+// window-rule {
+//     match app-id=r#"^.*[Ss]potify.*$"#
+//     match at-startup=true
+//     open-on-workspace "gamma-music"
+// }
 
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
 
-window-rule {
-    match app-id="steam"
-    match title=r#"^Friends List$"#
-    open-floating true
-}   
+// window-rule {
+//     match app-id="steam"
+//     match title=r#"^Friends List$"#
+//     open-floating true
+// }   
 
 window-rule {
     match app-id="steam"
@@ -322,9 +322,9 @@ Mod+6 { focus-workspace 6; }
 Mod+7 { focus-workspace 7; }
 Mod+8 { focus-workspace 8; }
 Mod+9 { focus-workspace 9; }
-Mod+Ctrl+1 { move-column-to-workspace "alpha-browser"; }
-Mod+Ctrl+2 { move-column-to-workspace "beta-terminal"; }
-Mod+Ctrl+3 { move-column-to-workspace "gamma-music"; }
+Mod+Ctrl+1 { move-column-to-workspace 1; }
+Mod+Ctrl+2 { move-column-to-workspace 2; }
+Mod+Ctrl+3 { move-column-to-workspace 3; }
 Mod+Ctrl+4 { move-column-to-workspace 4; }
 Mod+Ctrl+5 { move-column-to-workspace 5; }
 Mod+Ctrl+6 { move-column-to-workspace 6; }
