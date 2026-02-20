@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-2511.url = "github:NixOS/nixpkgs/nixos-25.11";
+
     lanzaboote.url = "github:nix-community/lanzaboote/v1.0.0";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -17,7 +19,7 @@
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, lanzaboote, musnix, home-manager, spicetify-nix, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs-2511, lanzaboote, musnix, home-manager, spicetify-nix, ... }: 
   let
     mkHost = { name, user, system ? "x86_64-linux", homeModule }: 
       nixpkgs.lib.nixosSystem {
@@ -38,8 +40,8 @@
             };
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
-          ({pkgs, ...}: {
-          #  nixpkgs.overlays = [ (import ./overlays/spotx.nix) ];
+          ({pkgs, inputs, ...}: {
+            nixpkgs.overlays = [ ((import ./overlays/wineWow.nix) inputs.nixpkgs-2511) ];
           })
         ];
         specialArgs = { inherit inputs; };

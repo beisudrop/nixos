@@ -64,9 +64,9 @@
     zoxide #cd
     # Audio
     reaper
-    # yabridge
-    # yabridgectl
-    # wineWow64Packages.yabridge
+    yabridge # doesn't compile anymore since wineWowPackages is deprecated
+    #yabridgectl
+    wineWowPackages.yabridge
     # Niri
     xwayland-satellite
     wl-clipboard

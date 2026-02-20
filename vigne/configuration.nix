@@ -158,7 +158,6 @@ in  {
   ];
 
   environment.sessionVariables = {
-    # NIXOS_OZONE_WL = "1"; #unnötig maybe?
     # quickshell
     QT_QPA_PLATFORM= "wayland;xcb";
     QT_QPA_PLATFORMTHEME="qt6ct";

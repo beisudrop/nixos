@@ -8,12 +8,19 @@
     plugins = with pkgs.vimPlugins; [
       transparent-nvim
       nvim-treesitter
+      telescope-nvim
+      yazi-nvim
+      nvim-lspconfig
+      nvim-cmp
     ];
     extraConfig = ''
       set clipboard+=unnamedplus 
     '';
+    initLua = ''
+      vim.lsp.enable('nil_ls')
+    '';
     coc = {
-      enable = true;
+      enable = false;
       settings = {
         languageserver = {
           nix = {
