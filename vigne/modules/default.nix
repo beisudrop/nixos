@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, pkgs-stable, ...}:
 
 {
   services.network-manager-applet.enable = true;
@@ -37,6 +37,9 @@
 
   home.packages = with pkgs; [
     #wob volume overlay
+    pkgs-stable.yabridge
+    pkgs-stable.wineWowPackages.yabridge
+    pkgs-stable.yabridgectl
     curl
     eza #ls
     fd #find
@@ -64,13 +67,10 @@
     zoxide #cd
     # Audio
     reaper
-    yabridge # doesn't compile anymore since wineWowPackages is deprecated
-    #yabridgectl
-    wineWowPackages.yabridge
     # Niri
     xwayland-satellite
     wl-clipboard
     wlogout
     swaylock
-  ];  
+  ];
 }
