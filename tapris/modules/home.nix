@@ -1,30 +1,36 @@
-{ config, pkgs, inputs, ... }: 
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   vars = import ../vars.nix;
-in {
+in
+{
   home.username = "${vars.userName}";
   home.homeDirectory = "/home/${vars.userName}";
-  home.stateVersion = "25.05"; 
+  home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
     wget
     moonlight-qt
-    pavucontrol
-#    python313Packages.pycec
+    pwvucontrol
+    #    python313Packages.pycec
     imagemagick
     libcec
-#    ngrok
+    #    ngrok
     rofi
     mpv
-    reaper
-    pywal
+    #reaper
+    #pywal
     hellwal
     # Hyprland essentials:
-    swaylock-effects
+    #swaylock-effects
     wl-clipboard
-    grim
-    slurp
+    #grim
+    #slurp
     qt6.qtwayland
     xdg-utils
   ];

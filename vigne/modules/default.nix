@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ...}:
+{ pkgs, pkgs-stable, ... }:
 
 {
   services.network-manager-applet.enable = true;
@@ -9,13 +9,12 @@
     "-max-items"
     "5"
   ];
-  services.swayidle.enable = true;
   # services.sunshine.enable = true;
   programs.quickshell.enable = true;
   qt.enable = true;
 
   imports = [
-    ../home.nix 
+    ../home.nix
     ./alacritty.nix
     ./fastfetch
     ./firefox
@@ -30,6 +29,7 @@
     ./neovim
     ./niri
     ./spicetify.nix
+    ./swayidle
     ./vesktop
     ./yazi.nix
     ./zsh
@@ -41,30 +41,30 @@
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
     curl
-    eza #ls
-    fd #find
+    eza # ls
+    fd # find
     ffmpeg
-    fzf #fuzzy
+    fzf # fuzzy
     imagemagick
-    jq #json processor
+    jq # json processor
     mpv
-    nil #nix language server
+    nil # nix language server
     opencode
-    perl #für spotx
-    poppler #pdf rendering
-    pwvucontrol #pipewire volume
-    qt6Packages.qt6ct #qt control center
-    resvg #svg support
-    ripgrep #grep
-    sabnzbd #nzb download
-    tesseract #ocr
+    perl # für spotx
+    poppler # pdf rendering
+    pwvucontrol # pipewire volume
+    qt6Packages.qt6ct # qt control center
+    resvg # svg support
+    ripgrep # grep
+    sabnzbd # nzb download
+    tesseract # ocr
     unrar
     unzip
     vscode-fhs
     wget
     winetricks
-    xz #compression
-    zoxide #cd
+    xz # compression
+    zoxide # cd
     # Audio
     reaper
     # Niri
