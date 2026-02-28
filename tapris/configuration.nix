@@ -1,12 +1,11 @@
 { config, pkgs, ... }:
 let
   vars = import ./vars.nix;
-in 
+in
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.meslo-lg
@@ -17,10 +16,10 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   systemd.shutdownRamfs.enable = false;
   boot.kernelParams = [
-    "acpi=force"       # Force ACPI even if buggy
-    "reboot=acpi"      # Prefer ACPI reboot
-    "acpi_backlight=none"  # Avoid backlight conflicts
-    "pci=noaer"        # Disable PCIe Advanced Error Reporting (can hang)
+    "acpi=force" # Force ACPI even if buggy
+    "reboot=acpi" # Prefer ACPI reboot
+    "acpi_backlight=none" # Avoid backlight conflicts
+    "pci=noaer" # Disable PCIe Advanced Error Reporting (can hang)
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -43,7 +42,7 @@ in
   };
 
   console = {
-     font = "Lat2-Terminus16";
+    font = "Lat2-Terminus16";
     # keyMap = "de";
     useXkbConfig = true;
   };
@@ -65,19 +64,26 @@ in
 
   users.users.${vars.userName} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "sound" "network" "storage" ];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "sound"
+      "network"
+      "storage"
+    ];
     shell = pkgs.zsh;
   };
 
   programs.zsh.enable = true;
- 
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      withUWSM = true;
-    };
-  };
+
+  #programs = {
+  #  hyprland = {
+  #    enable = true;
+  #    xwayland.enable = true;
+  #    withUWSM = true;
+  #  };
+  #};
+  programs.niri.enable = true;
 
   security.polkit.enable = true;
 
@@ -98,16 +104,18 @@ in
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # services.displayManager.sddm.enable = true;
-  
+
   services.greetd = {
     enable = true;
     settings = {
       initial_session = {
-	      command = "uwsm start -eD Hyprland hyprland.desktop";   
-	      user = "${vars.userName}";
+        #  command = "uwsm start -eD Hyprland hyprland.desktop";
+        command = "${pkgs.niri}/bin/niri-session";
+        user = "${vars.userName}";
       };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";   
+        #  command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember  --asterisks  --container-padding 2 --no-xsession-wrapper --cmd niri-session";
         user = "greeter";
       };
     };
@@ -128,7 +136,10 @@ in
   };
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     settings.auto-optimise-store = true;
     gc = {
       automatic = true;
@@ -141,8 +152,8 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-#  environment.systemPackages = with pkgs; [
-#  ];
+  #  environment.systemPackages = with pkgs; [
+  #  ];
 
   services.openssh = {
     enable = true;
@@ -165,17 +176,38 @@ in
       libvdpau-va-gl
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  }; # Force intel-media-driver
 
   musnix.enable = false; # cpu performance governor
 
-  networking.firewall.allowedTCPPorts = [ 22 ]; #443
-  networking.firewall.allowedTCPPortRanges = [ { from = 1717;
-                                                 to = 1764; } ];
-  networking.firewall.allowedUDPPortRanges = [ { from = 1717;
-                                                 to = 1764; } ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    47984
+    47989
+    48010
+  ]; # 443
+  networking.firewall.allowedTCPPortRanges = [
+    #{
+    #  from = 1717;
+    #  to = 1764;
+    #}
+
+  ];
+  networking.firewall.allowedUDPPorts = [
+    47998
+    47999
+    48000
+    48002
+    48010
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+    #{
+    #  from = 1717;
+    #  to = 1764;
+    #}
+  ];
 
   system.stateVersion = "25.05";
-
 }
-

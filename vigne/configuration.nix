@@ -9,11 +9,10 @@ in  {
     ];
 
   fonts.packages = with pkgs; [
-  nerd-fonts.meslo-lg
-  noto-fonts-cjk-serif
-  source-han-sans
-  # material-symbols
-  # material-icons
+    nerd-fonts.meslo-lg
+    noto-fonts-cjk-serif
+    source-han-sans
+    material-symbols
   ];
 
   hardware.enableAllFirmware = true;  # Enable all firmware support, for microcode, idk if needed. redistributable firmware is in hardware-configuration.nix
@@ -120,7 +119,7 @@ in  {
   };
 
   #real time audio stuff
-  security.rtkit.enable = false;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -133,7 +132,7 @@ in  {
     { domain = "@audio"; item = "memlock"; type = "-"   ; value = "unlimited"; }
     { domain = "@audio"; item = "rtprio" ; type = "-"   ; value = "99"       ; }
     { domain = "@audio"; item = "nofile" ; type = "soft"; value = "99999"    ; }
-    { domain = "@audio"; item = "nofile" ; type = "hard"; value = "524288"    ; }
+    { domain = "@audio"; item = "nofile" ; type = "hard"; value = "99999"    ; }
   ];  
 
   programs.niri.enable = true;
@@ -153,7 +152,6 @@ in  {
     hellwal
     kdePackages.breeze-icons
     material-icons
-    material-symbols
     python3
   ];
 
