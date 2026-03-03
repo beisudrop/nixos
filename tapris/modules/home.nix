@@ -33,6 +33,7 @@ in
     #slurp
     qt6.qtwayland
     xdg-utils
+    xwayland-sattelite
   ];
 
   qt = {
