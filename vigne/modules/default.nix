@@ -57,6 +57,7 @@
     resvg # svg support
     ripgrep # grep
     sabnzbd # nzb download
+    # teamspeak3 uses qtwebengine which is deprecated and insecure
     tesseract # ocr
     unrar
     unzip

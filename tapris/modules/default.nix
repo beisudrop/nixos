@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
+{ ... }:
 
 {
   services.network-manager-applet.enable = true;
@@ -20,10 +14,10 @@
     ./fuzzel.nix
     ./zsh
     ./gtk.nix
-    #  ./hellwal
+    # ./hellwal
     ./mako.nix
     ./neovim
-    ./niri
+    # ./niri
     ./kitty.nix
     ./alacritty.nix
     ./rofi

@@ -86,7 +86,7 @@ layout {
     }
 }
 
-spawn-at-startup "waybar" "&&" "firefox"
+spawn-at-startup "firefox"
 
 spawn-sh-at-startup "~/nix/random-wallpaper.sh &"
 
