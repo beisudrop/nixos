@@ -15,13 +15,7 @@ in  {
     material-symbols
   ];
 
-  hardware.enableAllFirmware = true;  # Enable all firmware support, for microcode, idk if needed. redistributable firmware is in hardware-configuration.nix
-
-#  services.displayManager.sddm.wayland.enable = true;
-#  services.displayManager.sddm.enable = true;
-#  services.displayManager.sddm.extraPackages = with pkgs; [
-#    
-#  ];
+  hardware.enableAllFirmware = true;
 
   services.greetd = {
     enable = true;
@@ -93,7 +87,7 @@ in  {
   users.users.${vars.userName} = {
     isNormalUser = true;
     description = "Tobias";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" ];
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -135,6 +129,12 @@ in  {
     { domain = "@audio"; item = "nofile" ; type = "hard"; value = "99999"    ; }
   ];  
 
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    openFirewall = true;
+  };
+
   programs.niri.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
@@ -142,17 +142,15 @@ in  {
   programs.git.enable = true;
   programs.git.lfs.enable = true;
   programs.nix-ld.enable = true; #fhs compliancy
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc.lib ];
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc.lib zlib gcc.cc.lib libICE libSM libX11 ];
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
+  programs.ente-auth.enable = true;
 
   environment.systemPackages = with pkgs; [
-    osu-lazer-bin
-    yt-dlp
-    hellwal
     kdePackages.breeze-icons
     material-icons
-    python3
+    #inputs.jellyfin2samsung.packages.${pkgs.system}.default
   ];
 
   environment.sessionVariables = {
@@ -170,7 +168,6 @@ in  {
     wlr.enable = true; 
   };
 
-  # services.openssh.enable = true;
   services.libinput.mouse.accelProfile = "flat";
   services.playerctld.enable = true;
 

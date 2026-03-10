@@ -17,9 +17,13 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+#    jellyfin2samsung.url = "./jellyfin2samsung";
+#    jellyfin2samsung.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, musnix, home-manager, spicetify-nix, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, musnix, home-manager, spicetify-nix, ... }: #jellyfin2samsung
   let
     pkgs-stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
     mkHost = { name, user, system ? "x86_64-linux", homeModule }:
@@ -41,8 +45,8 @@
             };
             home-manager.extraSpecialArgs = { inherit inputs pkgs-stable; };
           }
-          ({pkgs, ...}: {
-            # nixpkgs.overlays = [ (import ./overlays) ];
+          ({pkgs, config, ...}: {
+            nixpkgs.overlays = [ (import ./overlays) ];
           })
         ];
         specialArgs = { inherit inputs; };

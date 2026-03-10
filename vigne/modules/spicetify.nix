@@ -7,6 +7,7 @@ let
 in {
   programs.spicetify = {
     enable = true;
+    wayland = true;
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       hidePodcasts
