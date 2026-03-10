@@ -11,7 +11,7 @@
       mkdir = "mkdir -vp";
       mv = "mv -iv";
       cp = "cp -iv";
-      update = "sudo nixos-rebuild switch --flake github:beisudrop/nixos#tapris --recreate-lock-file";
+      update = "sudo nixos-rebuild switch --flake github:beisudrop/nixos#tapris --recreate-lock-file --no-write-lock-file";
     };
     oh-my-zsh.enable = true;
     initContent = 

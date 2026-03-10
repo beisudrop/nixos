@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -23,10 +21,7 @@ in
     #    ngrok
     rofi
     mpv
-    #reaper
-    #pywal
     hellwal
-    # Hyprland essentials:
     #swaylock-effects
     wl-clipboard
     #grim

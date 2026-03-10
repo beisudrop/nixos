@@ -6,7 +6,6 @@
     # Use an attrset instead of a list
     events = {
       "before-sleep" = "${pkgs.swaylock}/bin/swaylock -fF";
-      # "lock" = "lock";
     };
 
     timeouts = [
@@ -16,7 +15,7 @@
       }
       {
         timeout = 900;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
+        command = "${pkgs.systemd}/bin/systemctl suspend"; #todo: wpctl status | grep -i spotify check for active audio
       }
     ];
   };
