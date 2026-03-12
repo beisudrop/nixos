@@ -18,12 +18,14 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    inputs.sops-nix.url = "github:Mic92/sops-nix";
+    inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 #    jellyfin2samsung.url = "./jellyfin2samsung";
 #    jellyfin2samsung.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, musnix, home-manager, spicetify-nix, ... }: #jellyfin2samsung
+  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, musnix, home-manager, spicetify-nix, sops-nix, ... }: #jellyfin2samsung
   let
     pkgs-stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
     mkHost = { name, user, system ? "x86_64-linux", homeModule }:
@@ -34,6 +36,7 @@
           lanzaboote.nixosModules.lanzaboote
           musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
+	  sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

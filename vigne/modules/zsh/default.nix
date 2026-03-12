@@ -31,7 +31,9 @@
       zshEins = lib.mkOrder 1000 '' source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
       '';
-      zshZwei = lib.mkOrder 1200 '' kitty +kitten icat --align=left --use-window-size $COLUMNS,$LINES,400,400 "$(find ~/Downloads/Pokemon/assets/images -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)" 
+      zshZwei = lib.mkOrder 1200 '' if [[ "$TERM" == "xterm-kitty" ]]; then
+      kitty +kitten icat --align=left --use-window-size $COLUMNS,$LINES,400,400 "$(find ~/Bilder/Pokemon -type f -name "*.png" -o -name "*.jpg" | shuf -n 1)" 
+      fi
       '';
     in
     lib.mkMerge [ zshEins zshZwei ];
