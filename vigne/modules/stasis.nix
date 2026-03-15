@@ -2,24 +2,24 @@
 {
   home.packages = with pkgs; [ stasis ];
 
-  systemd.user.services."stasis-wayland-idle-manager" = {
-    Unit = {
-      Description = "Stasis Wayland Idle Manager";
-      PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
-      ConditionEnvironment = "WAYLAND_DISPLAY";
-    };
-    
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.stasis}/bin/stasis";
-      Restart = "on-failure";
-    };
-    
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
+#  systemd.user.services."stasis-wayland-idle-manager" = {
+#    Unit = {
+#      Description = "Stasis Wayland Idle Manager";
+#      PartOf = [ "graphical-session.target" ];
+#      After = [ "graphical-session.target" ];
+#      ConditionEnvironment = "WAYLAND_DISPLAY";
+#    };
+#    
+#    Service = {
+#      Type = "simple";
+#      ExecStart = "${pkgs.stasis}/bin/stasis";
+#      Restart = "on-failure";
+#    };
+#    
+#    Install = {
+#      WantedBy = [ "graphical-session.target" ];
+#    };
+#  };
   
   home.file = {
     ".config/stasis/stasis.rune".text = ''
@@ -27,7 +27,7 @@
 @description "description"
 
 stasis:
-  pre_suspend_command "swaylock"
+  # pre_suspend_command "qs -p ~/quickshell/quickshell/quickshell-examples/lockscreen/shell.qml"
   monitor_media true
   ignore_remote_media true 
   media_blacklist ["spotify"] 
@@ -36,7 +36,7 @@ stasis:
 
   # Lock detection method: "process" (default) or "logind"
   # Use "logind" if your locker uses loginctl (e.g., quickshell)
-  #lock_detection_type "process"
+  lock_detection_type "logind"
   
   # debounce: default is 0s; can be customized if needed
   #debounce-seconds 4
@@ -59,7 +59,7 @@ stasis:
   
   lock_screen:
     timeout 300
-    command "swaylock"
+    command "qs -p ~/quickshell/quickshell/quickshell-examples/lockscreen/shell.qml"
   end
   
   dpms:

@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.fastfetch = {
     enable = true;
     settings = {
       logo = {
-        source = "~/Downloads/cachynosey.png";
+        type = "auto";
+        source = "~/Bilder/assets/*.png";
         padding = {
           top = 2;
           left = 3;

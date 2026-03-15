@@ -39,7 +39,7 @@
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
     # python314Packages.samsungtvws
-    # teamspeak3 uses qtwebengine5 which is deprecated and insecure
+    # teamspeak3
     curl
     eza # ls
     fd # find

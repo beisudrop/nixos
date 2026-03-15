@@ -18,8 +18,8 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    inputs.sops-nix.url = "github:Mic92/sops-nix";
-    inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 #    jellyfin2samsung.url = "./jellyfin2samsung";
 #    jellyfin2samsung.inputs.nixpkgs.follows = "nixpkgs";
 
