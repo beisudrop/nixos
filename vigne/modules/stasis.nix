@@ -27,12 +27,11 @@
 @description "description"
 
 stasis:
-  # pre_suspend_command "qs -p ~/quickshell/quickshell/quickshell-examples/lockscreen/shell.qml"
+  pre_suspend_command "qs -p ~/nixos/scripts/lockscreen/shell.qml"
   monitor_media true
   ignore_remote_media true 
   media_blacklist ["spotify"] 
   respect_idle_inhibitors true
-  enable_dbus_inhubit true
 
   # Lock detection method: "process" (default) or "logind"
   # Use "logind" if your locker uses loginctl (e.g., quickshell)
@@ -59,7 +58,7 @@ stasis:
   
   lock_screen:
     timeout 300
-    command "qs -p ~/quickshell/quickshell/quickshell-examples/lockscreen/shell.qml"
+    command "qs -p ~/nixos/scripts/lockscreen/shell.qml"
   end
   
   dpms:

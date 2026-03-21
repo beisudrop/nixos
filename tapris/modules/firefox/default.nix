@@ -28,7 +28,7 @@
       };
     };
     profiles.default = {
-      extraConfig = builtins.readFile ./user.js;
+      # extraConfig = builtins.readFile ./user.js;
       userChrome = builtins.readFile ./userChrome.css;
     };
   };

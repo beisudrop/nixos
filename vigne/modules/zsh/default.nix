@@ -20,6 +20,7 @@
 #       cat = "bat --paging=never --style=plain";
         ls = "exa -a --icons";
         tree = "exa --tree --icons";
+        update = ''cd /home/tobias/nixos && nix flake update && git add . && sudo nixos-rebuild switch --flake && git commit -m "flake update" && git push origin main'';
     };
 
     oh-my-zsh = {

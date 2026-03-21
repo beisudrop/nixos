@@ -148,8 +148,6 @@ in  {
   programs.ente-auth.enable = true;
 
   environment.systemPackages = with pkgs; [
-    kdePackages.breeze-icons
-    material-icons
     #inputs.jellyfin2samsung.packages.${pkgs.system}.default
   ];
 
