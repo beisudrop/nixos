@@ -28,7 +28,7 @@
   i18n.defaultLocale = "de_DE.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty.
+    useXkbConfig = true;
   };
 
 fonts.packages = with pkgs; [
@@ -36,13 +36,11 @@ fonts.packages = with pkgs; [
   noto-fonts-cjk-sans
 ];
 
-  # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
     windowManager.qtile.enable = true;
   };
 
-  # Configure keymap in X11
   services.xserver.xkb.layout = "de";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
@@ -63,7 +61,7 @@ fonts.packages = with pkgs; [
     { domain = "@audio"; item = "memlock"; type = "-"   ; value = "unlimited"; }
     { domain = "@audio"; item = "rtprio" ; type = "-"   ; value = "99"       ; }
     { domain = "@audio"; item = "nofile" ; type = "soft"; value = "99999"    ; }
-    { domain = "@audio"; item = "nofile" ; type = "hard"; value = "524288"    ; }
+    { domain = "@audio"; item = "nofile" ; type = "hard"; value = "524288"   ; }
   ];
 
 

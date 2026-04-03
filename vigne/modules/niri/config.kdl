@@ -174,7 +174,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "qs" "-p" "/home/tobias/quickshell/quickshell/quickshell-examples/lockscreen/shell.qml"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: quickshell" { spawn "qs" "-p" "/home/tobias/nixos/scripts/lockscreen/shell.qml"; }
 
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
