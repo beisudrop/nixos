@@ -3,7 +3,7 @@
 {
   services.network-manager-applet.enable = true;
   programs.btop.enable = true;
-  services.swww.enable = true;
+  services.awww.enable = true;
   services.cliphist.enable = true;
   services.cliphist.extraOptions = [
     "-max-items"
