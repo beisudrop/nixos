@@ -3,7 +3,7 @@
 {
   services.network-manager-applet.enable = true;
   programs.btop.enable = true;
-  services.awww.enable = true;
+  # services.awww.enable = true; # broken
   services.cliphist.enable = true;
   services.cliphist.extraOptions = [
     "-max-items"
@@ -63,6 +63,7 @@
     ripgrep # grep
     sabnzbd # nzb download
     sshfs # mount filesystem
+    awww
     tesseract # ocr
     unrar
     unzip
