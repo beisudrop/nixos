@@ -87,8 +87,7 @@ layout {
 }
 
 spawn-at-startup "awww-daemon"
-spawn-at-startup "stasis"
-
+// spawn-at-startup "stasis"
 spawn-sh-at-startup "~/nixos/scripts/random-wallpaper.sh"
 
 hotkey-overlay {
