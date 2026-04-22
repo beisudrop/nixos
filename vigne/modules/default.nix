@@ -51,6 +51,8 @@
     jq # json processor
     mpv
     nil # nix language server
+    jocalsend
+    onlyoffice-desktopeditors
     opencode
     osu-lazer-bin
     perl # für spotx

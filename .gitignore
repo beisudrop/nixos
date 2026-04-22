@@ -1,4 +1,5 @@
 scripts/samsungtv.py
+scripts/nierlock
 tapris/ngrok.txt
 ./localPackages
 .sops.yaml
