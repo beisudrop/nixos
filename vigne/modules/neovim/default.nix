@@ -8,7 +8,6 @@
     viAlias = true;
     plugins = with pkgs.vimPlugins; [
       transparent-nvim
-      nvim-treesitter
       telescope-nvim
       yazi-nvim
       nvim-lspconfig

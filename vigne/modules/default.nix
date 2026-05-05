@@ -39,7 +39,6 @@
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
     # python314Packages.samsungtvws
-    # teamspeak3
     curl
     eza # ls
     fd # find
@@ -51,7 +50,7 @@
     jq # json processor
     mpv
     nil # nix language server
-    jocalsend
+    localsend
     onlyoffice-desktopeditors
     opencode
     osu-lazer-bin
