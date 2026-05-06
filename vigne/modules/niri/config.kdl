@@ -104,6 +104,15 @@ animations {
 }
 
 
+layer-rule {
+    match namespace="^launcher$"
+
+    background-effect {
+        blur true
+    }
+}
+
+
 window-rule {
     match app-id="firefox" title="Picture-in-Picture"
     open-floating true
