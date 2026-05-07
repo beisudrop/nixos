@@ -14,10 +14,10 @@
     ./fuzzel.nix
     ./zsh
     ./gtk.nix
-    # ./hellwal
+    #./hellwal
     ./mako.nix
     ./neovim
-    # ./niri
+    #./niri hellwal and niri have out of store symlinks so importing from git doesnt work
     ./kitty.nix
     ./alacritty.nix
     ./rofi
