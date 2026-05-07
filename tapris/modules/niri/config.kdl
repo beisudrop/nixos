@@ -86,9 +86,9 @@ layout {
     }
 }
 
-spawn-at-startup "firefox"
+spawn-sh-at-startup "qs" "-p" "quickshell/shell.qml"
 
-spawn-sh-at-startup "~/nix/random-wallpaper.sh &"
+spawn-sh-at-startup "~/nix/random-wallpaper.sh"
 
 hotkey-overlay {
     skip-at-startup

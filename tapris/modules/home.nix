@@ -15,6 +15,7 @@ in
     wget
     moonlight-qt
     pwvucontrol
+    quickshell
     #    python313Packages.pycec
     imagemagick
     libcec
@@ -27,6 +28,7 @@ in
     #grim
     #slurp
     qt6.qtwayland
+    wlogout
     xdg-utils
     xwayland-satellite
   ];
