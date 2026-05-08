@@ -5,7 +5,6 @@
   programs.fastfetch.enable = true;
   programs.btop.enable = true;
   programs.waybar.enable = true;
-  services.swww.enable = true;
   # services.cliphist.enable = true;
 
   imports = [
