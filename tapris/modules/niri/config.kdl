@@ -86,6 +86,8 @@ layout {
     }
 }
 
+spawn-at-startup "awww-daemon"
+
 spawn-sh-at-startup "qs" "-p" "quickshell/shell.qml"
 
 spawn-sh-at-startup "~/nix/random-wallpaper.sh"
