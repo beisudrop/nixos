@@ -16,6 +16,7 @@ in  {
   ];
 
   hardware.enableAllFirmware = true;
+  hardware.bluetooth.enable = false;
 
   services.greetd = {
     enable = true;
