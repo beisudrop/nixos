@@ -39,7 +39,11 @@
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
     # python314Packages.samsungtvws
+    azahar
+    #blueman
+    bluez
     curl
+    dolphin-emu
     eza # ls
     fd # find
     ffmpeg
@@ -51,6 +55,7 @@
     mpv
     nil # nix language server
     localsend
+    melonds
     onlyoffice-desktopeditors
     opencode
     osu-lazer-bin
@@ -79,5 +84,6 @@
     wl-clipboard
     wlogout
     swaylock
+    xwiimote
   ];
 }
