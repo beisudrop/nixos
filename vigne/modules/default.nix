@@ -22,11 +22,13 @@
     ./ghostty.nix
     ./gtk.nix
     ./hellwal
+    ./hypr
     ./kitty.nix
     ./lutris.nix
     ./mako.nix
     ./neovim
     ./niri
+    ./reaper.nix
     ./spicetify.nix
     ./stasis.nix
     ./vesktop
@@ -83,7 +85,5 @@
     xwayland-satellite
     wl-clipboard
     wlogout
-    swaylock
-    xwiimote
   ];
 }

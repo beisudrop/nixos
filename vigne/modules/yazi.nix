@@ -10,7 +10,7 @@
         { run = "mpv $@ --no-video"; }
       ];
       open.prepend_rules = [
-        { name = "*.ogg"; use = "audio"; }
+        { url = "*.ogg"; use = "audio"; }
       ];
     };
   };
