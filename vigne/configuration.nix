@@ -18,6 +18,17 @@ in  {
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = false;
 
+  security.pam.services.greeter = {
+    enableGnomeKeyring = true;
+    text = ''
+      auth     include    system-local-login
+      auth     optional   pam_gnome_keyring.so
+      account  include    system-local-login
+      password include    system-local-login
+      session  include    system-local-login
+      session  optional   pam_gnome_keyring.so auto_start
+    '';
+  };
   services.greetd = {
     enable = true;
     settings = {
@@ -136,6 +147,8 @@ in  {
     openFirewall = true;
   };
 
+  programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
   programs.niri.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
@@ -159,13 +172,13 @@ in  {
     QT_AUTO_SCREEN_SCALE_FACTOR="1";
   };
 
-  services.xserver.enable = true;
-  hardware.graphics.enable = true;
-  xdg.portal = {
-    enable = true;
-    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    wlr.enable = true; 
-  };
+  #services.xserver.enable = true;
+  #hardware.graphics.enable = true;
+  #xdg.portal = {
+  #  enable = true;
+  #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #  wlr.enable = true; 
+  #};
 
   services.libinput.mouse.accelProfile = "flat";
   services.playerctld.enable = true;
