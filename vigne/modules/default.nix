@@ -85,5 +85,9 @@
     xwayland-satellite
     wl-clipboard
     wlogout
+    # Hyprland
+    grim
+    slurp
+    networkmanagerapplet
   ];
 }

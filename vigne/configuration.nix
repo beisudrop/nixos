@@ -18,26 +18,15 @@ in  {
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = false;
 
-  security.pam.services.greeter = {
-    enableGnomeKeyring = true;
-    text = ''
-      auth     include    system-local-login
-      auth     optional   pam_gnome_keyring.so
-      account  include    system-local-login
-      password include    system-local-login
-      session  include    system-local-login
-      session  optional   pam_gnome_keyring.so auto_start
-    '';
-  };
   services.greetd = {
     enable = true;
     settings = {
       initial_session = {
-	      command = "${pkgs.niri}/bin/niri-session";
+	      command = "${pkgs.hyprland}/bin/start-hyprland"; #niri-session
 	      user = "${vars.userName}";
       };
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --remember  --asterisks  --container-padding 2 --no-xsession-wrapper --cmd niri-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --cmd start-hyprland"; # --remember  --asterisks  --container-padding 2 --no-xsession-wrapper --cmd niri-session
         user = "greeter";
       };
     };

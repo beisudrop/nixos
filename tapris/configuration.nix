@@ -181,9 +181,8 @@ in
   }; # Force intel-media-driver
 
   musnix.enable = false; # cpu performance governor
-  programs.droidcam.enable = true;
-  programs.obs-studio.enable = true;
-  programs.obs-studio.plugins = [ pkgs.obs-studio-plugins.droidcam-obs ];
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
 
   networking.firewall.allowedTCPPorts = [
     22
