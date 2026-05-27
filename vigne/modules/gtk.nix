@@ -9,5 +9,8 @@
       package = pkgs.dracula-icon-theme;
       name = "Dracula";
     };
+    cursorTheme.name = "Bibata-Modern-Ice";
+    cursorTheme.size = 24;
+    colorScheme = "dark";
   };
 }

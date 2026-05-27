@@ -1,13 +1,4 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
+-- require("~/.cache/hellwal/hypr-colors.lua")
 
 
 ------------------
@@ -45,7 +36,10 @@ local menu        = "fuzzel"
 hl.on("hyprland.start", function () 
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("/home/tobias/nixos/scripts/random-wallpaper.sh")
-  --   hl.exec_cmd("waybar & hyprpaper & firefox")
+  hl.exec_cmd("fcitx5")
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("wl-paste --watch cliphist store")
+  --   hl.exec_cmd("stasis")
 end)
 
 
@@ -55,9 +49,10 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("EDITOR", "vim")
+-- hl.env("EDITOR", "vim")
 
 
 -----------------------
@@ -104,9 +99,12 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "scrolling",
     },
 
+    scrolling = {
+	column_width = 1.0,
+    },
     decoration = {
         rounding       = 10,
         rounding_power = 2,
@@ -124,9 +122,11 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 12,
+            size      = 8,
             passes    = 1,
             vibrancy  = 0.1696,
+	    xray      = true,
+	    new_optimizations = true,
         },
     },
 
@@ -165,7 +165,6 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
 hl.window_rule({
@@ -208,8 +207,9 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+	middle_click_paste = false,
     },
 })
 
@@ -236,6 +236,7 @@ hl.config({
 
 	accel_profile = "flat",
 	force_no_accel = true,
+        scroll_method = "edge"
     },
 })
 
@@ -268,8 +269,12 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+-- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + J", hl.dsp.layout("colresize -conf"))    -- scrolling only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))   
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/nierlock/shell.qml"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/nierlock/shell.qml && systemctl suspend"))
+hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/Screenshots/"$(date +%Y%m%d-%H%M%S)".png'))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -306,10 +311,10 @@ hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+")
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
 -- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind(mainMod .. " + END",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
+hl.bind(mainMod .. " + INSERT", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind(mainMod .. " + DELETE",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 
 --------------------------------
@@ -352,6 +357,15 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
+-- Apply blur to any layer surface with namespace matching 'launcher'
+
+hl.layer_rule({
+    match = {
+        namespace = "launcher"  -- Matches exactly "launcher"
+    },
+    blur = true,
+    xray = true,
+})
 
 -- Hyprland-run windowrule
 hl.window_rule({
@@ -361,3 +375,5 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+
