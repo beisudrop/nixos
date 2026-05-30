@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, ... }: 
 let
   vars = import ../../vars.nix;
 in {

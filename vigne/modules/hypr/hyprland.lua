@@ -1,4 +1,5 @@
 -- require("~/.cache/hellwal/hypr-colors.lua")
+local colors = loadfile(os.getenv("HOME") .. "/.cache/hellwal/hypr-colors.lua")()
 
 
 ------------------
@@ -20,7 +21,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "yazi"
+local fileManager = "kitty -e yazi"
 local menu        = "fuzzel"
 
 
@@ -38,8 +39,9 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("/home/tobias/nixos/scripts/random-wallpaper.sh")
   hl.exec_cmd("fcitx5")
   hl.exec_cmd("nm-applet")
-  hl.exec_cmd("wl-paste --watch cliphist store")
-  --   hl.exec_cmd("stasis")
+  hl.exec_cmd("wl-paste --watch cliphist -max-items 5 store")
+  hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 5 store")
+--  hl.exec_cmd("stasis")
 end)
 
 
@@ -89,8 +91,8 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = {color1, color2}, angle = 45 },
+            inactive_border = color3,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -122,7 +124,7 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 8,
+            size      = 10,
             passes    = 1,
             vibrancy  = 0.1696,
 	    xray      = true,

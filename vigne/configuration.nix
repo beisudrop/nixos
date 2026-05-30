@@ -18,6 +18,8 @@ in  {
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = false;
 
+  security.pam.services.greetd.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
   services.greetd = {
     enable = true;
     settings = {
@@ -124,10 +126,9 @@ in  {
     wireplumber.enable = true;
   };
   security.pam.loginLimits = [
-    { domain = "@audio"; item = "memlock"; type = "-"   ; value = "unlimited"; }
-    { domain = "@audio"; item = "rtprio" ; type = "-"   ; value = "99"       ; }
-    { domain = "@audio"; item = "nofile" ; type = "soft"; value = "99999"    ; }
-    { domain = "@audio"; item = "nofile" ; type = "hard"; value = "99999"    ; }
+    { domain = "@audio";  item = "memlock"; type = "-"      ; value = "unlimited"; }
+    { domain = "@audio";  item = "rtprio" ; type = "-"      ; value = "99"       ; }
+    { domain = "@tobias"; item = "nofile" ; type = "hard"   ; value = "524288"   ; }
   ];  
 
   services.sunshine = {
@@ -159,6 +160,8 @@ in  {
     QT_QPA_PLATFORM= "wayland;xcb";
     QT_QPA_PLATFORMTHEME="qt6ct";
     QT_AUTO_SCREEN_SCALE_FACTOR="1";
+    # vulkan shader
+    MESA_SHADER_CACHE_MAX_SIZE = "10G";
   };
 
   #services.xserver.enable = true;
