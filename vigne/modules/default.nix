@@ -11,6 +11,8 @@
   ];
   programs.quickshell.enable = true;
   qt.enable = true;
+  xdg.terminal-exec.enable = true;
+  xdg.terminal-exec.settings = { default = [ "kitty.desktop" ]; };
 
   imports = [
     ../home.nix
@@ -41,8 +43,9 @@
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
     # python314Packages.samsungtvws
-    azahar
     #blueman
+    awww
+    azahar
     bluez
     curl
     dolphin-emu
@@ -54,10 +57,10 @@
     heroic
     imagemagick
     jq # json processor
-    mpv
-    nil # nix language server
     localsend
     melonds
+    mpv
+    nil # nix language server
     onlyoffice-desktopeditors
     opencode
     osu-lazer-bin
@@ -71,8 +74,8 @@
     ripgrep # grep
     sabnzbd # nzb download
     sshfs # mount filesystem
-    awww
     tesseract # ocr
+    timg
     unrar
     unzip
     vscode-fhs
