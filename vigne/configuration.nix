@@ -18,6 +18,20 @@ in  {
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = false;
 
+#  services.keyd = {
+#    enable = true;
+#    keyboards.default.settings = {
+#      main = {
+#        "right" = "timeout(50,right)";
+#      };
+#    };
+#  };
+
+	  
+
+
+
+
   security.pam.services.greetd.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
   services.greetd = {
@@ -172,7 +186,13 @@ in  {
   #  wlr.enable = true; 
   #};
 
+  services.libinput.enable = true;
   services.libinput.mouse.accelProfile = "flat";
+#  environment.etc."libinput/local-overrides.quirks".text = ''
+# [CHERRY MX 8.2 Xaga TKL Wireless]
+#MatchName=CHERRY MX 8.2 Xaga TKL Wireless Mechanical Keyboard
+#ModelBouncingKeys=1
+#  '';
   services.playerctld.enable = true;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
