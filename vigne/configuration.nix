@@ -32,8 +32,8 @@ in  {
 
 
 
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  services.gnome.gnome-keyring.enable = true;
+#  security.pam.services.greetd.enableGnomeKeyring = true;
+#  services.gnome.gnome-keyring.enable = true;
   services.greetd = {
     enable = true;
     settings = {
@@ -164,6 +164,8 @@ in  {
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
   programs.ente-auth.enable = true;
+  programs.gamescope.enable = true;
+  programs.gamescope.capSysNice = true;
 
   environment.systemPackages = with pkgs; [
     #inputs.jellyfin2samsung.packages.${pkgs.system}.default
