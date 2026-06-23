@@ -6,7 +6,7 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    lanzaboote.url = "github:nix-community/lanzaboote/v1.0.0";
+    lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
     musnix.url = "github:musnix/musnix";
