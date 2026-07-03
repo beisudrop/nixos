@@ -119,15 +119,15 @@ in  {
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-  system.autoUpgrade = {
-    enable = true;
-    dates = "Sun 05:00";
-    flake = inputs.self.outPath;
-    flags = [
-      "--recreate-lock-file"
-    ];
-    runGarbageCollection = true;
-  };
+#  system.autoUpgrade = {
+#    enable = true;
+#    dates = "Sun 05:00";
+#    flake = inputs.self.outPath;
+#    flags = [
+#      "--recreate-lock-file"
+#    ];
+#    runGarbageCollection = true;
+#  };
 
   #real time audio stuff
   security.rtkit.enable = true;
@@ -152,7 +152,7 @@ in  {
   };
 
   programs.hyprland.enable = true;
-  programs.hyprland.withUWSM = true;
+#  programs.hyprland.withUWSM = true;
   programs.niri.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
@@ -195,8 +195,8 @@ in  {
 #  '';
   services.playerctld.enable = true;
 
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 53317 ];
+  networking.firewall.allowedUDPPorts = [ 53317 ];
 
 
   system.stateVersion = "25.11";

@@ -65,6 +65,7 @@
     opencode
     osu-lazer-bin
     perl # für spotx
+    pince
     poppler # pdf rendering
     pwvucontrol # pipewire volume
     python3

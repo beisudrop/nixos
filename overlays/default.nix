@@ -3,7 +3,7 @@ self: super: {
     buildInputs = old.buildInputs ++ [ self.qt6.qtimageformats ];
   });
 
-  openldap = super.openldap.overrideAttrs {
-    doCheck = !super.stdenv.hostPlatform.isi686;
-  };
+#  openldap = super.openldap.overrideAttrs {
+#    doCheck = !super.stdenv.hostPlatform.isi686;
+#  };
 }
