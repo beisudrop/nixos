@@ -57,6 +57,7 @@
     heroic
     imagemagick
     jq # json processor
+    legcord
     localsend
     melonds
     mpv
@@ -74,6 +75,7 @@
     resvg # svg support
     ripgrep # grep
     sabnzbd # nzb download
+    setxkbmap # x11 us de swap for th11
     sshfs # mount filesystem
     tesseract # ocr
     timg
