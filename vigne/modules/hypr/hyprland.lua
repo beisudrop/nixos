@@ -1,4 +1,3 @@
--- require("~/.cache/hellwal/hypr-colors.lua")
 local colors = loadfile(os.getenv("HOME") .. "/.cache/hellwal/hypr-colors.lua")()
 
 
@@ -274,8 +273,8 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + J", hl.dsp.layout("colresize -conf"))    -- scrolling only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))   
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/nierlock/shell.qml"))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/nierlock/shell.qml && systemctl suspend"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/lockscreen/shell.qml"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("systemctl suspend && qs -p ~/nixos/scripts/nierlock/shell.qml"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/Screenshots/"$(date +%Y%m%d-%H%M%S)".png'))
 
 -- Move focus with mainMod + arrow keys
@@ -363,7 +362,7 @@ hl.window_rule({
 
 hl.layer_rule({
     match = {
-        namespace = "launcher"  -- Matches exactly "launcher"
+        namespace = "launcher"
     },
     blur = true,
     xray = true,

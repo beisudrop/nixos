@@ -36,8 +36,10 @@
       timg -g 40x40 -p kitty "$(find ~/Bilder/Pokemon -type f \( -name "*.png" -o -name "*.jpg" \) | shuf -n 1)"   
       fi
       '';
+      zshDrei = lib.mkOrder 1400 '' eval "$(zoxide init zsh)"
+      '';
     in
-    lib.mkMerge [ zshEins zshZwei ];
+    lib.mkMerge [ zshEins zshZwei zshDrei ];
   };
 #  plugins = [
 #    {
