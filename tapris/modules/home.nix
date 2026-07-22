@@ -13,6 +13,7 @@ in
 
   home.packages = with pkgs; [
     awww
+    jq
     wget
     moonlight-qt
     pwvucontrol

@@ -1,5 +1,6 @@
 scripts/samsungtv.py
 scripts/nierlock
+scipts/unspash-wallpaper.sh
 tapris/ngrok.txt
 ./localPackages
 .sops.yaml

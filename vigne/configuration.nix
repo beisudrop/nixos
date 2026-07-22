@@ -104,7 +104,7 @@ in  {
   users.users.${vars.userName} = {
     isNormalUser = true;
     description = "Tobias";
-    extraGroups = [ "networkmanager" "wheel" "audio" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" "tty" ];
   };
 
   users.defaultUserShell = pkgs.zsh;
