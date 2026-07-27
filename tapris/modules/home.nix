@@ -33,6 +33,11 @@ in
     wlogout
     xdg-utils
     xwayland-satellite
+    #samsungtv
+    python314Packages.samsungtvws
+    python314Packages.yarl
+    python314Packages.typer
+    python314Packages.wakeonlan
   ];
 
   qt = {
