@@ -153,7 +153,7 @@ in  {
 
   programs.hyprland.enable = true;
 #  programs.hyprland.withUWSM = true;
-  programs.niri.enable = true;
+#  programs.niri.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
   programs.dconf.enable = true; #für gtk

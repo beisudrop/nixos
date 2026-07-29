@@ -76,14 +76,15 @@ in
 
   programs.zsh.enable = true;
 
-  #programs = {
-  #  hyprland = {
-  #    enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
   #    xwayland.enable = true;
-  #    withUWSM = true;
-  #  };
-  #};
-  programs.niri.enable = true;
+      withUWSM = true;
+    };
+  };
+  
+  # programs.niri.enable = true;
 
   security.polkit.enable = true;
 
@@ -103,19 +104,17 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  # services.displayManager.sddm.enable = true;
-
   services.greetd = {
     enable = true;
     settings = {
       initial_session = {
-        #  command = "uwsm start -eD Hyprland hyprland.desktop";
-        command = "${pkgs.niri}/bin/niri-session";
+        command = "uwsm start -eD Hyprland hyprland.desktop";
+        # command = "${pkgs.niri}/bin/niri-session";
         user = "${vars.userName}";
       };
       default_session = {
-        #  command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";
-        command = "${pkgs.tuigreet}/bin/tuigreet --remember  --asterisks  --container-padding 2 --no-xsession-wrapper --cmd niri-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";
+        # command = "${pkgs.tuigreet}/bin/tuigreet --remember  --asterisks  --container-padding 2 --no-xsession-wrapper --cmd niri-session";
         user = "greeter";
       };
     };
