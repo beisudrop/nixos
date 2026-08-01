@@ -13,11 +13,8 @@
       };
     };
     iconTheme = {
-      name = "Papirus-Dark";       # Catppuccin Papirus folders usually inherit the Papirus base name
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";          # Must match your GTK variant
-        accent = "blue";           # Must match your GTK accent
-      };
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
     };
     cursorTheme.name = "Bibata-Modern-Ice";
     cursorTheme.size = 24;
