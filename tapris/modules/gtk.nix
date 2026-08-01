@@ -14,7 +14,7 @@
     };
     iconTheme = {
       name = "Dracula";
-      package = pkgs.drachula-icon-theme;
+      package = pkgs.dracula-icon-theme;
     };
     cursorTheme.name = "Bibata-Modern-Ice";
     cursorTheme.size = 24;
