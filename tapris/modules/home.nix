@@ -25,19 +25,18 @@ in
     rofi
     mpv
     hellwal
-    #swaylock-effects
     wl-clipboard
-    #grim
-    #slurp
     qt6.qtwayland
     wlogout
     xdg-utils
     xwayland-satellite
     #samsungtv
-    python314Packages.samsungtvws
-    python314Packages.yarl
-    python314Packages.typer
-    python314Packages.wakeonlan
+    (python314.withPackages (ps: with ps; [
+      samsungtvws
+      yarl
+      typer
+      wakeonlan
+  ]))
   ];
 
   qt = {
