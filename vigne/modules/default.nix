@@ -42,7 +42,6 @@
     pkgs-stable.yabridge
     pkgs-stable.wineWowPackages.yabridge
     pkgs-stable.yabridgectl
-    # python314Packages.samsungtvws
     #blueman
     awww
     azahar

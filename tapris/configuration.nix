@@ -94,11 +94,14 @@ in
   };
 
   environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+#    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
-    QT_QPA_PLATFORM = "wayland;xcb";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     GDK_BACKEND = "wayland,x11";
+    QT_QPA_PLATFORM= "wayland;xcb";
+    QT_QPA_PLATFORMTHEME="gtk";
+    QT_AUTO_SCREEN_SCALE_FACTOR="1";
+    LIBVA_DRIVER_NAME = "iHD"; # Force intel-media-driver
   };
 
   xdg.portal.enable = true;
@@ -175,11 +178,6 @@ in
       libvdpau-va-gl
     ];
   };
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  }; # Force intel-media-driver
-
-  musnix.enable = false; # cpu performance governor
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
