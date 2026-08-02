@@ -29,7 +29,8 @@ in
     qt6.qtwayland
     wlogout
     xdg-utils
-    xwayland-satellite
+#    xwayland-satellite
+    valent
     #samsungtv
     (python314.withPackages (ps: with ps; [
       samsungtvws

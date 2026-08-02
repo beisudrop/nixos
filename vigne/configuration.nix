@@ -178,11 +178,9 @@ in  {
     MESA_SHADER_CACHE_MAX_SIZE = "10G";
   };
 
-  #services.xserver.enable = true;
-  #hardware.graphics.enable = true;
   #xdg.portal = {
   #  enable = true;
-  #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #  extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   #  wlr.enable = true; 
   #};
 
