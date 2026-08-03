@@ -39,9 +39,9 @@
   ];
 
   home.packages = with pkgs; [
-    pkgs-stable.yabridge
-    pkgs-stable.wineWowPackages.yabridge
-    pkgs-stable.yabridgectl
+    yabridge
+    yabridgectl
+    wineWow64Packages.stable
     #blueman
     awww
     azahar

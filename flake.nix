@@ -9,9 +9,6 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
-    musnix.url = "github:musnix/musnix";
-    musnix.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -20,12 +17,13 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
 #    jellyfin2samsung.url = "./jellyfin2samsung";
 #    jellyfin2samsung.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, musnix, home-manager, spicetify-nix, sops-nix, ... }: #jellyfin2samsung
+  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, home-manager, spicetify-nix, sops-nix, ... }: #jellyfin2samsung
   let
     pkgs-stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
     mkHost = { name, user, system ? "x86_64-linux", homeModule }:
@@ -34,7 +32,7 @@
         modules = [
           ./${name}/configuration.nix
           lanzaboote.nixosModules.lanzaboote
-          musnix.nixosModules.musnix
+#          musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
 	  sops-nix.nixosModules.sops
           {
