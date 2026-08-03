@@ -39,9 +39,4 @@ in
       wakeonlan
   ]))
   ];
-
-  qt = {
-    enable = true;
-    # platformTheme.name = "gtk";
-  };
 }

@@ -32,9 +32,8 @@
         modules = [
           ./${name}/configuration.nix
           lanzaboote.nixosModules.lanzaboote
-#          musnix.nixosModules.musnix
           home-manager.nixosModules.home-manager
-	  sops-nix.nixosModules.sops
+          sops-nix.nixosModules.sops
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
