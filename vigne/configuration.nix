@@ -176,7 +176,7 @@ in  {
     QT_AUTO_SCREEN_SCALE_FACTOR="1";
     # vulkan shader
     MESA_SHADER_CACHE_MAX_SIZE = "10G";
-    FZF_DEFAULT_COMMAND="'fd --type file --hidden --no-ignore'";   # force fzf to use fd
+    FZF_DEFAULT_COMMAND="'fd'";   # force fzf to use fd
   };
 
   #xdg.portal = {

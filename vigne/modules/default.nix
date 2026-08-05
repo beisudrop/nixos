@@ -61,6 +61,7 @@
     melonds
     mpv
     nil # nix language server
+    noctalia # desktop-shell
     onlyoffice-desktopeditors
     opencode
     osu-lazer-bin
