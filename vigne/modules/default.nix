@@ -58,6 +58,7 @@
     jq # json processor
     legcord
     localsend
+		lua-language-server
     melonds
     mpv
     nil # nix language server
@@ -70,6 +71,7 @@
     poppler # pdf rendering
     pwvucontrol # pipewire volume
     python3
+		python314Packages.pynvim
     qt6Packages.qt6ct # qt control center
     reaper
     resvg # svg support

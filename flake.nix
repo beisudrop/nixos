@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+#    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
@@ -23,9 +23,9 @@
 
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, lanzaboote, home-manager, spicetify-nix, sops-nix, ... }: #jellyfin2samsung
+  outputs = inputs@{ nixpkgs, lanzaboote, home-manager, spicetify-nix, sops-nix, ... }: #jellyfin2samsung
   let
-    pkgs-stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
+#    pkgs-stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; };
     mkHost = { name, user, system ? "x86_64-linux", homeModule }:
       nixpkgs.lib.nixosSystem {
         inherit system;
@@ -43,7 +43,7 @@
                 homeModule
               ];
             };
-            home-manager.extraSpecialArgs = { inherit inputs pkgs-stable; };
+            home-manager.extraSpecialArgs = { inherit inputs; }; #inherit pkgs-stable
           }
           ({pkgs, config, ...}: {
             nixpkgs.overlays = [ (import ./overlays) ];

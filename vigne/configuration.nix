@@ -194,7 +194,7 @@ in  {
 #  '';
   services.playerctld.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 53317 ];
+  networking.firewall.allowedTCPPorts = [ 53317 ]; #53317 localsend
   networking.firewall.allowedUDPPorts = [ 53317 ];
 
 
