@@ -15,7 +15,7 @@
     ./gtk.nix
     #./hellwal
     ./mako.nix
-    ./neovim
+    ./nvim
     ./qt
     #./niri hellwal and niri have out of store symlinks so importing from git doesnt work
     ./kitty.nix

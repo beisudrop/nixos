@@ -28,7 +28,7 @@
     ./kitty.nix
     ./lutris.nix
     ./mako.nix
-    ./neovim
+    ./nvim
     ./niri
     ./reaper.nix
     ./spicetify.nix

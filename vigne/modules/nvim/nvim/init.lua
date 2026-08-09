@@ -1,0 +1,13 @@
+vim.g.mapleader = " "
+
+require("options")
+require("lsp")
+require("colorscheme")
+--require("statusline")
+--require("find")
+--require("grep")
+require("autocommands")
+require("diagnostics")
+require("formatting")
+--require("keymaps")
+require("plugins")
