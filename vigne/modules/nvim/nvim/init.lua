@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 
 require("options")
 require("lsp")
@@ -11,3 +11,5 @@ require("diagnostics")
 require("formatting")
 --require("keymaps")
 require("plugins")
+require("intro")
+require("lazy")

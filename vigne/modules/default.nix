@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 
 {
   services.network-manager-applet.enable = true;
@@ -62,6 +62,7 @@
     melonds
     mpv
     nil # nix language server
+    nixfmt # nix formatter
     noctalia # desktop-shell
     onlyoffice-desktopeditors
     opencode

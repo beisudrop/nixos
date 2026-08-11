@@ -9,8 +9,10 @@
     };
     font.name = "MesloLGS Nerd Font Mono";
     font.size = 18;
+    
     extraConfig = ''
       include ~/.cache/hellwal/kitty-colors.conf
+      adjust_line_height 110%
     '';
   };
 }

@@ -12,6 +12,7 @@
       smear-cursor-nvim
 			gruvbox-material-nvim
 			nvim-tree-lua
+      lazy-nvim
     ];
   };
   home.file.".config/nvim".source = ./nvim;

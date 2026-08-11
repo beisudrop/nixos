@@ -1,4 +1,4 @@
-#!/usr/bin/env/bash
+#!/usr/bin/env bash
 cd /home/tobias/nixos
 nix flake update
 git add .

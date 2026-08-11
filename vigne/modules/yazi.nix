@@ -3,7 +3,7 @@
   programs.yazi = {
     enable = true;
     plugins = {
-      mount = pkgs.yaziPlugins.mount;
+#      mount = pkgs.yaziPlugins.mount;
     };
     settings = {
       opener.audio = [

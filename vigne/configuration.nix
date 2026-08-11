@@ -11,8 +11,8 @@ in  {
   fonts.packages = with pkgs; [
     nerd-fonts.meslo-lg
     noto-fonts-cjk-serif
-    source-han-sans
-    material-symbols
+#    source-han-sans
+#    material-symbols
   ];
 
   hardware.enableAllFirmware = true;
@@ -26,11 +26,6 @@ in  {
 #      };
 #    };
 #  };
-
-	  
-
-
-
 
 #  security.pam.services.greetd.enableGnomeKeyring = true;
 #  services.gnome.gnome-keyring.enable = true;
