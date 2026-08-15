@@ -18,7 +18,7 @@ in
     hellwal
     imagemagick
     jq
-    moonlight-qt
+    #    moonlight-qt
     mpv
     pwvucontrol
     qt6.qtwayland
@@ -32,11 +32,13 @@ in
     xdg-utils
     #xwayland-satellite # niri
     #samsungtv
-    (python314.withPackages (ps: with ps; [
-      samsungtvws
-      yarl
-      typer
-      wakeonlan
-  ]))
+    (python314.withPackages (
+      ps: with ps; [
+        samsungtvws
+        yarl
+        typer
+        wakeonlan
+      ]
+    ))
   ];
 }

@@ -1,50 +1,17 @@
--- Define the startup screen logic inside the autocmd callback
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    -- Only proceed if:
-    -- 1. No files were passed as arguments
-    -- 2. The current buffer is empty (no file loaded)
-    -- 3. We're not in insert mode
-    if vim.fn.argc() > 0 or vim.fn.line2byte("$") ~= -1 or vim.o.insertmode then
-      return
+-- Create a custom start screen
+if vim.fn.argc() == 0 then
+  vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+      -- Open a new buffer and set it as unlisted and wiped out when hidden
+      vim.cmd("enew")
+      vim.cmd("setlocal bufhidden=wipe buftype=nofile nobuflisted nonumber norelativenumber")
+      -- Write custom content
+      require("milli").starter({ splash = "fire", loop = true })
+      -- Make buffer non-modifiable
+      vim.cmd("setlocal nomodifiable")
+      -- Map 'q' to quit and 'e' to new file
+      vim.api.nvim_buf_set_keymap(0, "n", "q", ":qa<CR>", { noremap = true, silent = true })
+      vim.api.nvim_buf_set_keymap(0, "n", "e", ":enew<CR>", { noremap = true, silent = true })
     end
-
-    -- Create a new unnamed buffer for the splash screen
-    vim.cmd("enew")
-
-    -- Configure buffer options for a clean splash screen
-    vim.bo.bufhidden = "wipe"
-    vim.bo.buftype = "nofile"
-    vim.bo.buflisted = false
-    vim.bo.swapfile = false
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-    vim.wo.cursorline = false
-    vim.wo.cursorcolumn = false
-    vim.wo.list = false
-
-    -- Render custom content (ensure 'milli' is loaded first)
-    local ok, milli = pcall(require, "milli")
-    if ok then
-      milli.vimenter({ splash = "garchomp", loop = true })
-    else
-      -- Fallback text if plugin fails to load
-      vim.api.nvim_buf_set_lines(0, 0, -1, false, {
-        "Welcome to Neovim!",
-        "",
-        "Press 'e' to create a new file",
-        "Press 'q' to quit",
-      })
-    end
-
-    -- Make buffer read-only
-    vim.bo.modifiable = false
-    vim.bo.modified = false
-
-    -- Set keymaps for navigation
-    vim.keymap.set("n", "q", ":qa<CR>", { buffer = 0, silent = true, noremap = true })
-    vim.keymap.set("n", "e", ":enew<CR>", { buffer = 0, silent = true, noremap = true })
-    vim.keymap.set("n", "o", ":enew<CR>i", { buffer = 0, silent = true, noremap = true })
-  end,
-})   
+  })
+end
