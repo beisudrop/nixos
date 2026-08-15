@@ -1,39 +1,41 @@
 { pkgs, ... }:
 
 {
-  services.network-manager-applet.enable = true;
+  #  services.network-manager-applet.enable = true;
   programs.btop.enable = true;
-  # services.awww.enable = true; # broken
-  services.cliphist.enable = true;
-  services.cliphist.extraOptions = [
-    "-max-items"
-    "5"
-  ];
+  #  services.awww.enable = true; # broken
+  #  services.cliphist.enable = true;
+  #  services.cliphist.extraOptions = [
+  #    "-max-items"
+  #    "5"
+  #  ];                                         noctalia handles all of that
   programs.quickshell.enable = true;
   qt.enable = true;
   xdg.terminal-exec.enable = true;
-  xdg.terminal-exec.settings = { default = [ "kitty.desktop" ]; };
+  xdg.terminal-exec.settings = {
+    default = [ "kitty.desktop" ];
+  };
 
   imports = [
     ../home.nix
-    ./alacritty.nix
+    #    ./alacritty.nix
     ./fastfetch
     ./fcitx5
     ./firefox
     ./fuzzel.nix
-    ./ghostty.nix
+    #    ./ghostty.nix
     ./gtk.nix
     ./hellwal
     ./hypr
     ./kitty.nix
     ./lutris.nix
-    ./mako.nix
+    #    ./mako.nix
     ./nvim
-    ./niri
+    #    ./niri
     ./reaper.nix
     ./spicetify.nix
-    ./stasis.nix
-    ./vesktop
+    #    ./stasis.nix
+    #    ./vesktop
     ./yazi.nix
     ./zsh
   ];
@@ -55,10 +57,13 @@
     hellwal
     heroic
     imagemagick
+    jellyfin
     jq # json processor
+    kavita
     legcord
     localsend
-		lua-language-server
+    lua-language-server
+    mangayomi
     melonds
     mpv
     nil # nix language server
@@ -72,13 +77,13 @@
     poppler # pdf rendering
     pwvucontrol # pipewire volume
     python3
-		python314Packages.pynvim
+    python314Packages.pynvim
     qt6Packages.qt6ct # qt control center
     reaper
     resvg # svg support
     ripgrep # grep
     sabnzbd # nzb download
-    setxkbmap # x11 us de swap for th11
+    setxkbmap # x11 us de swap for 東方11
     sshfs # mount filesystem
     tesseract # ocr
     timg

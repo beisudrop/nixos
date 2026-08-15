@@ -24,12 +24,12 @@ local menu        = "fuzzel"
 -------------------
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("awww-daemon")
-  hl.exec_cmd("/home/tobias/nixos/scripts/random-wallpaper.sh")
+--  hl.exec_cmd("awww-daemon")
+--  hl.exec_cmd("/home/tobias/nixos/scripts/random-wallpaper.sh")
   hl.exec_cmd("fcitx5")
-  hl.exec_cmd("nm-applet")
-  hl.exec_cmd("wl-paste --watch cliphist -max-items 5 store")
-  hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 5 store")
+--  hl.exec_cmd("nm-applet")
+--  hl.exec_cmd("wl-paste --watch cliphist -max-items 5 store")
+--  hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 5 store")
 --  hl.exec_cmd("stasis")
 end)
 
@@ -79,6 +79,7 @@ hl.config({
 	column_width = 1.0,
     },
     decoration = {
+--        screen_shader = "~/nixos/vigne/modules/hypr/shaders/art_canvas.glsl",
         rounding       = 10,
         rounding_power = 2,
         active_opacity   = 1.0,
@@ -277,4 +278,9 @@ hl.window_rule({
     float = true,
 })
 
-
+hl.window_rule({
+    match = {
+        class      = "REAPER",
+    },
+    idle_inhibit = "focus",
+})

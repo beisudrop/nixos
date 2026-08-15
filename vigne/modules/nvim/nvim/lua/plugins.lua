@@ -7,7 +7,12 @@ require("yazi").setup({
   },
 })
 require("nvim-tree").setup({
-  open_on_setup = true,
-  open_on_setup_file = true,
   open_on_tab = false,
+})
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "lazyplugins" },
+  },
+  checker = { enabled = true },
 })
