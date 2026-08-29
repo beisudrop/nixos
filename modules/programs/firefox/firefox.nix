@@ -32,7 +32,7 @@
             };
             profiles.default = {
               # extraConfig = builtins.readFile ./user.js;
-              userChrome = builtins.readFile ./_userChrome.css;
+              userChrome = builtins.readFile ./userChrome.css;
             };
           };
         };
