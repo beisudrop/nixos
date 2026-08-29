@@ -4,3 +4,4 @@ scripts/unsplash-wallpaper.sh
 tapris/ngrok.txt
 ./localPackages
 .sops.yaml
+secrets

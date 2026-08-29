@@ -19,8 +19,6 @@
     ./qt
     #./niri hellwal and niri have out of store symlinks so importing from git doesnt work
     ./kitty.nix
-    ./alacritty.nix
-    ./rofi
     ./yazi.nix
   ];
 }

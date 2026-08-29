@@ -17,16 +17,17 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "kitty -e yazi"
-local menu        = "fuzzel"
+local menu        = "noctalia msg panel-toggle launcher" --fuzzel
 
 -------------------
 ---- AUTOSTART ----
 -------------------
 
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
 --  hl.exec_cmd("awww-daemon")
 --  hl.exec_cmd("/home/tobias/nixos/scripts/random-wallpaper.sh")
   hl.exec_cmd("fcitx5")
+  hl.exec_cmd("noctalia")
 --  hl.exec_cmd("nm-applet")
 --  hl.exec_cmd("wl-paste --watch cliphist -max-items 5 store")
 --  hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 5 store")
@@ -263,9 +264,7 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    match = {
-        namespace = "launcher"
-    },
+    match = { namespace = "launcher" },
     blur = true,
     xray = true,
 })
@@ -273,14 +272,11 @@ hl.layer_rule({
 hl.window_rule({
     name  = "move-hyprland-run",
     match = { class = "hyprland-run" },
-
     move  = "20 monitor_h-120",
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class      = "REAPER",
-    },
+    match = { class = "REAPER" },
     idle_inhibit = "focus",
 })

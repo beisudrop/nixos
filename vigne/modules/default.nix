@@ -59,7 +59,7 @@
     imagemagick
     jellyfin
     jq # json processor
-    kavita
+    kavita # manga server
     legcord
     localsend
     lua-language-server
@@ -86,7 +86,7 @@
     setxkbmap # x11 us de swap for 東方11
     sshfs # mount filesystem
     tesseract # ocr
-    timg
+    timg # terminal images
     unrar
     unzip
     vscode-fhs
