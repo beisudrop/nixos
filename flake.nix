@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    #    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    import-tree.url = "github:denful/import-tree";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,77 +18,14 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    #    jellyfin2samsung.url = "./jellyfin2samsung";
-    #    jellyfin2samsung.inputs.nixpkgs.follows = "nixpkgs";
-
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      lanzaboote,
-      home-manager,
-      spicetify-nix,
-      sops-nix,
-      ...
-    }: # jellyfin2samsung
-    let
-      #    pkgs-stable = import inputs.nixpkgs-stable { system ? "x86_64-linux"; };
-      mkHost =
-        {
-          name,
-          user,
-          system ? "x86_64-linux",
-          homeModule,
-        }:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./${name}/configuration.nix
-            lanzaboote.nixosModules.lanzaboote
-            home-manager.nixosModules.home-manager
-            sops-nix.nixosModules.sops
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${user} = {
-                imports = [
-                  inputs.spicetify-nix.homeManagerModules.spicetify
-                  homeModule
-                ];
-              };
-              home-manager.extraSpecialArgs = { inherit inputs; }; # inherit pkgs-stable
-            }
-            ({ pkgs, config, ... }: {
-              nixpkgs.overlays = [ (import ./overlays) ];
-            })
-          ];
-          specialArgs = { inherit inputs; };
-        };
-    in
-    {
-      nixosConfigurations.vigne = mkHost {
-        name = "vigne";
-        user = "tobias";
-        homeModule = import ./vigne/modules;
-      };
-      nixosConfigurations.zelel = mkHost {
-        name = "zelel";
-        user = "beisu";
-        # system = "aarch64-linux";  # Overrides the default (example)
-        homeModule = import ./zelel/modules;
-      };
-      nixosConfigurations.tapris = mkHost {
-        name = "tapris";
-        user = "amsel";
-        homeModule = import ./tapris/modules;
-      };
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.flake-parts.flakeModules.modules
+        (inputs.import-tree ./modules)
+      ];
     };
 }
-#Haniel
-#Zelel
-#Jophiel
-#Tapris
-#Vigne
-#Raphiel

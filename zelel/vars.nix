@@ -1,5 +1,0 @@
-{
-  hostName = "zelel";
-  userName = "beisu";
-}
-

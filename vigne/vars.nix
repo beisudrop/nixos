@@ -1,4 +1,0 @@
-{
-  hostName = "vigne";
-  userName = "tobias";
-}

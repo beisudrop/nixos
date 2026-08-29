@@ -1,8 +1,0 @@
-{ inputs, pkgs, config, ... }:
-
-{
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
-  };
-}
