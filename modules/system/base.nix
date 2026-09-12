@@ -16,9 +16,10 @@
       nixpkgs.config.allowUnfree = true;
       networking.networkmanager.enable = true;
       users.defaultUserShell = pkgs.zsh;
-      programs.zsh.enable = true;
+      programs.zsh.enable = lib.mkDefault true;
       security.sudo.wheelNeedsPassword = false;
       security.polkit.enable = true;
+      nix.channel.enable = false;
       nix.settings.experimental-features = [
         "nix-command"
         "flakes"

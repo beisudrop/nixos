@@ -1,7 +1,4 @@
 {
-  ...
-}:
-{
   flake.modules.homeManager.spicetify =
     {
       pkgs,
@@ -21,8 +18,8 @@
           hidePodcasts
           shuffle
         ];
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "mocha";
+        theme = spicePkgs.themes.dribbblish;
+        colorScheme = "gruvbox-material-dark";
         spotifyLaunchFlags = "--password-store=basic";
       };
     };

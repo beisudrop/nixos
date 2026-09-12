@@ -1,12 +1,8 @@
 {
-  flake.modules.homeManager.quickshell =
-    {
-      ...
-    }:
-    {
-      programs.quickshell = {
-        enable = true;
+  flake.modules.homeManager.quickshell = {
+    programs.quickshell = {
+      enable = true;
 
-      };
     };
+  };
 }

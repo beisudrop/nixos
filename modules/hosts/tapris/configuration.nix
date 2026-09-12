@@ -11,14 +11,18 @@
     };
     modules = [
       inputs.home-manager.nixosModules.home-manager
-      self.modules.nixos.ssh
-      self.modules.nixos.base
-      self.modules.nixos.firefoxTapris
-      self.modules.nixos.taprisHardware
-      self.modules.nixos.hyprlandUWSM
-      self.modules.nixos.ovpn
-      self.modules.nixos.appimage
-      self.modules.nixos.fonts
+    ]
+    ++ (with self.modules.nixos; [
+      ssh
+      base
+      firefoxTapris
+      taprisHardware
+      hyprlandUWSM
+      ovpn
+      appimage
+      fonts
+      substituters
+      xdg-mime
       (
         {
           user,
@@ -170,6 +174,6 @@
           system.stateVersion = "26.05";
         }
       )
-    ];
+    ]);
   };
 }

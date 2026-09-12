@@ -13,7 +13,6 @@ def strip_line_comment(line):
 with open("user.js") as f:
     text = f.read()
 
-# Remove /* */ block comments
 text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
 
 out = []

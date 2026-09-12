@@ -11,12 +11,14 @@
     };
     modules = [
       inputs.home-manager.nixosModules.home-manager
-      self.modules.nixos.jellyfin
-      self.modules.nixos.ssh
-      self.modules.nixos.substitutors
-      self.modules.nixos.base
-      self.modules.nixos.cowsay
-      self.modules.nixos.raphielHardware
+    ]
+    ++ (with self.modules.nixos; [
+      jellyfin
+      ssh
+      substituters
+      base
+      cowsay
+      raphielHardware
       (
         {
           user,
@@ -54,8 +56,6 @@
         {
           boot.loader.systemd-boot.enable = true;
           boot.loader.efi.canTouchEfiVariables = true;
-          boot.kernelPackages = pkgs.linuxPackages_latest;
-          networking.hostName = host;
           users.users.${user} = {
             isNormalUser = true;
             extraGroups = [ "wheel" ];
@@ -63,6 +63,6 @@
           system.stateVersion = "26.05";
         }
       )
-    ];
+    ]);
   };
 }

@@ -1,11 +1,7 @@
 {
-  flake.modules.homeManager.fastfetch =
-    {
-      ...
-    }:
-    {
-      programs.fastfetch = {
-        enable = true;
-      };
+  flake.modules.homeManager.fastfetch = {
+    programs.fastfetch = {
+      enable = true;
     };
+  };
 }

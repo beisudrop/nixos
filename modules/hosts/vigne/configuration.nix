@@ -27,6 +27,7 @@
       appimage
       fonts
       sops
+      xdg-mime
       (
         {
           user,
@@ -61,6 +62,7 @@
               yazi
               zshVigne
               spicetify
+              fzf
             ];
           };
         }
@@ -135,8 +137,13 @@
           programs.nix-ld.enable = true;
           programs.nix-ld.libraries = with pkgs; [
             fontconfig
+            gcc.cc.lib
             gtk3
+            icu
             libGL
+            libICE
+            libSM
+            libX11
             libXcursor
             libXext
             libXfixes
@@ -144,15 +151,11 @@
             libXinerama
             libXrandr
             libXrender
+            libglvnd
             libxcb
-            gcc.cc.lib
-            icu
-            libICE
-            libSM
-            libX11
+            qt6.qtbase
             stdenv.cc.cc.lib
             zlib
-            qt6.qtbase
           ];
 
           programs.ente-auth.enable = true;
@@ -162,7 +165,6 @@
             QT_QPA_PLATFORMTHEME = "qt6ct";
             QT_AUTO_SCREEN_SCALE_FACTOR = "1";
             MESA_SHADER_CACHE_MAX_SIZE = "10G";
-            FZF_DEFAULT_COMMAND = "'fd'";
           };
 
           services.libinput.enable = true;

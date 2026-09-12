@@ -12,11 +12,10 @@
         curl
         dolphin-emu
         eza # ls
-        fd # find
         ffmpeg
-        fzf # fuzzy
         heroic
         imagemagick
+        feh
         jellyfin
         jq # json processor
         legcord

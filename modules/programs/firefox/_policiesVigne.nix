@@ -1,0 +1,190 @@
+{
+  ExtensionSettings = {
+    "*".installation_mode = "allowed";
+    "uBlock0@raymondhill.net" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "{6b733b82-9261-47ee-a595-2dda294a4d08}" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/yomitan/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "idcac-pub@guus.ninja" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "myallychou@gmail.com" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/youtube-recommended-videos/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "{74145f27-f039-47ce-a470-a662b129930a}" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "jid1-MnnxcxisBPnSXQ@jetpack" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "CanvasBlocker@kkapsner.de" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "ff2mpv@yossarian.net" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/ff2mpv/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "sponsorBlocker@ajay.app" = {
+      default_area = "menupanel";
+      install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+    "queryamoid@kaply.com" = {
+      default_area = "menupanel";
+      install_url = "https://github.com/mkaply/queryamoid/releases/download/v0.2/query_amo_addon_id-0.2-fx.xpi";
+      installation_mode = "force_installed";
+      private_browsing = true;
+    };
+  };
+
+  DisableTelemetry = true;
+  DisableFirefoxStudies = true;
+  DisablePocket = true;
+  OverrideFirstRunPage = "";
+  OverridePostUpdatePage = "";
+  DontCheckDefaultBrowser = true;
+  DisableSetDesktopBackground = true;
+  DisableFirefoxScreenshots = true;
+  DisableFormHistory = true;
+  NoDefaultBookmarks = true;
+  Preferences = {
+    "browser.aboutConfig.showWarning" = false;
+    "browser.aboutwelcome.enabled" = false;
+    "browser.ai.control.default" = "blocked";
+    "browser.bookmarks.openInTabClosesMenu" = false;
+    "browser.cache.disk.enable" = false;
+    "browser.compactmode.show" = true;
+    "browser.contentblocking.category" = "strict";
+    "browser.discovery.enabled" = false;
+    "browser.download.manager.addToRecentDocs" = false;
+    "browser.download.open_pdf_attachments_inline" = true;
+    "browser.download.start_downloads_in_tmp_dir" = true;
+    "browser.formfill.enable" = false;
+    "browser.ml.chat.enabled" = false;
+    "browser.ml.chat.menu" = false;
+    "browser.ml.enable" = false;
+    "browser.ml.linkPreview.enabled" = false;
+    "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
+    "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
+    "browser.newtabpage.activity-stream.default.sites" = "";
+    "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+    "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+    "browser.newtabpage.activity-stream.showSponsored" = false;
+    "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
+    "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+    "browser.newtabpage.activity-stream.telemetry" = false;
+    "browser.places.speculativeConnect.enabled" = false;
+    "browser.preferences.moreFromMozilla" = false;
+    "browser.privateWindowSeparation.enabled" = false;
+    "browser.privatebrowsing.forceMediaMemoryCache" = true;
+    "browser.profiles.enabled" = true;
+    "browser.safebrowsing.downloads.remote.enabled" = false;
+    "browser.search.separatePrivateDefault.ui.enabled" = true;
+    "browser.search.suggest.enabled" = false;
+    "browser.search.update" = false;
+    "browser.sessionstore.interval" = 60000;
+    "browser.sessionstore.privacy_level" = 2;
+    "browser.shell.checkDefaultBrowser" = false;
+    "browser.startup.homepage_override.mstone" = "ignore";
+    "browser.tabs.crashReporting.sendReport" = false;
+    "browser.tabs.groups.smart.enabled" = false;
+    "browser.uitour.enabled" = false;
+    "browser.urlbar.groupLabels.enabled" = false;
+    "browser.urlbar.quicksuggest.enabled" = false;
+    "browser.urlbar.speculativeConnect.enabled" = false;
+    "browser.urlbar.trending.featureGate" = false;
+    "browser.urlbar.trimHttps" = true;
+    "browser.urlbar.untrimOnUserInteraction.featureGate" = true;
+    "browser.xul.error_pages.expert_bad_cert" = true;
+    "datareporting.policy.dataSubmissionEnabled" = false;
+    "dom.security.https_only_mode" = true;
+    "dom.security.https_only_mode_error_page_user_suggestions" = true;
+    "extensions.enabledScopes" = 7;
+    "extensions.formautofill.addresses.enabled" = false;
+    "extensions.formautofill.creditCards.enabled" = false;
+    "extensions.getAddons.cache.enabled" = false;
+    "extensions.getAddons.showPane" = false;
+    "extensions.htmlaboutaddons.recommendations.enabled" = false;
+    "geo.provider.network.url" = "https://beacondb.net/v1/geolocate";
+    "gfx.canvas.accelerated.cache-size" = 512;
+    "gfx.content.skia-font-cache-size" = 20;
+    "media.cache_readahead_limit" = 3600;
+    "media.cache_resume_threshold" = 1800;
+    "media.memory_cache_max_size" = 65536;
+    "network.IDN_show_punycode" = true;
+    "network.auth.subresource-http-auth-allow" = 1;
+    "network.buffer.cache.count" = 48;
+    "network.buffer.cache.size" = 65535;
+    "network.captive-portal-service.enabled" = false;
+    "network.connectivity-service.enabled" = false;
+    "network.dns.disablePrefetch" = true;
+    "network.dns.disablePrefetchFromHTTPS" = true;
+    "network.dnsCacheExpiration" = 3600;
+    "network.http.max-connections" = 1800;
+    "network.http.max-persistent-connections-per-server" = 10;
+    "network.http.max-urgent-start-excessive-connections-per-host" = 5;
+    "network.http.referer.XOriginTrimmingPolicy" = 2;
+    "network.http.request.max-start-delay" = 5;
+    "network.http.speculative-parallel-limit" = 0;
+    "network.prefetch-next" = false;
+    "network.trr.max-fails" = 5;
+    "network.trr.mode" = 2;
+    "network.trr.uri" = "https://dns.dnswarden.com/adblock";
+    "pdfjs.enableScripting" = false;
+    "privacy.globalprivacycontrol.enabled" = true;
+    "privacy.userContext.ui.enabled" = true;
+    "signon.formlessCapture.enabled" = false;
+    "signon.privateBrowsingCapture.enabled" = false;
+    "signon.rememberSignons" = false;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+  };
+  SanitizeOnShutdown = {
+    Cache = true;
+    Cookies = true;
+    Downloads = true;
+    FormData = true;
+    History = true;
+    Sessions = true;
+  };
+  #      DisableProfileRefresh = true;
+  NetworkPrediction = false;
+  TranslateEnabled = false;
+}
