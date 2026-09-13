@@ -94,6 +94,7 @@
             isNormalUser = true;
             extraGroups = [
               "wheel"
+              "cdrom"
               "audio"
               "sound"
               "network"

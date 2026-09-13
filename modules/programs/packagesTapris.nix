@@ -8,6 +8,9 @@
       home.packages = with pkgs; [
         #ngrok
         #python314Packages.pycec libcec # both are required
+        cyanrip
+        makemkv
+        handbrake
         hellwal
         imagemagick
         jq

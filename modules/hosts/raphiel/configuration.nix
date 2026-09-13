@@ -58,7 +58,10 @@
           boot.loader.efi.canTouchEfiVariables = true;
           users.users.${user} = {
             isNormalUser = true;
-            extraGroups = [ "wheel" ];
+            extraGroups = [
+              "wheel"
+              "cdrom"
+            ];
           };
           system.stateVersion = "26.05";
         }

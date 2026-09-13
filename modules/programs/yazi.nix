@@ -9,7 +9,6 @@
             run = "nvim %s";
             block = true;
             desc = "nvim";
-            for = "unix";
           }
         ];
         opener.feh = [
@@ -17,7 +16,13 @@
             run = "feh --start-at %s1 %d1";
             block = true;
             desc = "feh";
-            for = "unix";
+          }
+        ];
+        opener.play = [
+          {
+            run = "mpv --fs %s";
+            orphan = true;
+            desc = "Play";
           }
         ];
         open.prepend_rules = [
