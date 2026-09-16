@@ -48,6 +48,7 @@
               noctalia
               gtk
               taprisPackages
+              fzf
               qt
               zsh
               nvim

@@ -42,6 +42,7 @@
               zsh
               yazi
               packagesRaphiel
+              fzf
             ];
           };
         }
