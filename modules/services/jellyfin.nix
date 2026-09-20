@@ -7,11 +7,9 @@
         openFirewall = true;
       };
       systemd.tmpfiles.rules = [
-        "a+ /home/${user} - - - - u:jellyfin:x"
-        "a+ /home/${user}/shows - - - - u:jellyfin:rx"
-        "a+ /home/${user}/shows - - - - d:u:jellyfin:rx"
-        "a+ /home/${user}/movies - - - - u:jellyfin:rx"
-        "a+ /home/${user}/movies - - - - d:u:jellyfin:rx"
+        "a+ /home/tobias - - - - u:jellyfin:x,m:x"
+        "a+ /home/tobias/shows - - - - u:jellyfin:rx,m:rx,d:u:jellyfin:rx,d:m:rx"
+        "a+ /home/tobias/movies - - - - u:jellyfin:rx,m:rx,d:u:jellyfin:rx,d:m:rx"
       ];
     };
 }
