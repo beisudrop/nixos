@@ -20,6 +20,7 @@
           lazy-nvim
         ];
       };
+      home.packages = [ pkgs.git ]; # for lazy-nvim
       home.file.".config/nvim".source = ./nvim;
       home.file.".config/nvim".recursive = true;
     };
