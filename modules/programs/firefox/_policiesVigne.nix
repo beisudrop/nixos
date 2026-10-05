@@ -31,12 +31,6 @@
       installation_mode = "force_installed";
       private_browsing = true;
     };
-    "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = {
-      default_area = "menupanel";
-      install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
-      installation_mode = "force_installed";
-      private_browsing = true;
-    };
     "{74145f27-f039-47ce-a470-a662b129930a}" = {
       default_area = "menupanel";
       install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
