@@ -4,14 +4,15 @@ on:
   schedule:
     - cron: '0 6 * * 1'
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v5
       - uses: DeterminateSystems/determinate-nix-action@v3
       - run: |
           nix flake update --commit-lock-file
-          git push origin HEAD   
+          git push origin HEAD    
