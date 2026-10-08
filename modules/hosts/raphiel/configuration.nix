@@ -64,6 +64,9 @@
               "cdrom"
             ];
           };
+          nix.settings = {
+            tarball-ttl = 0;
+          };
           system.stateVersion = "26.05";
         }
       )

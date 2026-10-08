@@ -173,6 +173,9 @@
             #  to = 1764;
             #}
           ];
+          nix.settings = {
+            tarball-ttl = 0;
+          };
           system.stateVersion = "26.05";
         }
       )
