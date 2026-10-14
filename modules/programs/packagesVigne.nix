@@ -28,6 +28,7 @@
         onlyoffice-desktopeditors
         opencode
         osu-lazer-bin
+        p7zip
         perl # für spotx
         pince
         poppler # pdf rendering
