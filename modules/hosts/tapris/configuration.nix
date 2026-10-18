@@ -11,6 +11,7 @@
     };
     modules = [
       inputs.home-manager.nixosModules.home-manager
+      inputs.hypr-kdeconnect-fix.nixosModules.default
     ]
     ++ (with self.modules.nixos; [
       ssh
@@ -23,6 +24,7 @@
       fonts
       substituters
       xdg-mime
+      kde-connect
       (
         {
           user,

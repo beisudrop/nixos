@@ -18,6 +18,9 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    hypr-kdeconnect-fix.url = "github:boscovn/hypr-kdeconnect-fix-flake";
+    hypr-kdeconnect-fix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
