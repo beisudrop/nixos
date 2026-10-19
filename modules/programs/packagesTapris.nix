@@ -17,7 +17,6 @@
         qt6.qtwayland
         qt6Packages.qt6ct
         quickshell
-        #valent #if hyprland implements remocon
         wget
         wl-clipboard
         xdg-utils

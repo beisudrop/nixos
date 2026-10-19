@@ -29,7 +29,7 @@
         opencode
         osu-lazer-bin
         p7zip
-        perl # für spotx
+        perl
         pince
         poppler # pdf rendering
         pwvucontrol # pipewire volume

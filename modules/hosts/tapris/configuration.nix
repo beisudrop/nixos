@@ -77,10 +77,6 @@
             "pci=noaer" # Disable PCIe Advanced Error Reporting (can hang)
           ];
 
-          # boot.extraModulePackages = [ config.boot.kernelPackages.r8168 ];
-          # boot.blacklistedKernelModules = [ "r8169" ];
-          # nixpkgs.config.allowBroken = true;
-
           #         services.xserver = {
           #            enable = true;
           #            xkb.layout = "de";
@@ -116,10 +112,6 @@
             LIBVA_DRIVER_NAME = "iHD"; # Force intel-media-driver
           };
 
-          #          xdg.portal.enable = true;
-          #          xdg.portal.config.common.default = "*";
-          #          xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-
           systemd = {
             # To prevent getting stuck at shutdown
             settings.Manager.DefaultTimeoutStopSec = "10s";
@@ -134,8 +126,6 @@
             };
           };
 
-          # programs.ydotool.enable = true;
-          # programs.ydotool.group = "network";
           programs.nix-ld.enable = true;
 
           nixpkgs.config.packageOverrides = pkgs: {
@@ -156,10 +146,6 @@
             48010
           ]; # 443
           networking.firewall.allowedTCPPortRanges = [
-            #{
-            #  from = 1717;
-            #  to = 1764;
-            #}
 
           ];
           networking.firewall.allowedUDPPorts = [
@@ -170,10 +156,7 @@
             48010
           ];
           networking.firewall.allowedUDPPortRanges = [
-            #{
-            #  from = 1717;
-            #  to = 1764;
-            #}
+
           ];
           nix.settings = {
             tarball-ttl = 0;
