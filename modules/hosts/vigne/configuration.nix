@@ -28,6 +28,7 @@
       fonts
       sops
       xdg-mime
+      bluetooth
       (
         {
           user,

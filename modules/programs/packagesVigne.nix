@@ -8,9 +8,9 @@
       home.packages = with pkgs; [
         #blueman
         azahar
-        bluez
         curl
         dolphin-emu
+        eden
         eza # ls
         ffmpeg
         heroic
