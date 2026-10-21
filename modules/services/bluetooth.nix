@@ -1,8 +1,9 @@
 {
   flake.modules.nixos.bluetooth =
-    { ... }:
+    { lib, ... }:
     {
       hardware.bluetooth.enable = true;
-      systemd.services.bluetooth.enable = false;
+      hardware.bluetooth.powerOnBoot = false;
+      systemd.services.bluetooth.wantedBy = lib.mkForce [ ];
     };
 }
