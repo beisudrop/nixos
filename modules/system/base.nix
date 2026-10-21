@@ -38,6 +38,7 @@
       time.timeZone = "Europe/Berlin";
       zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
       boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+      boot.loader.timeout = 5;
       networking.hostName = "${host}";
     };
 }

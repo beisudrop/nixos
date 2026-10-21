@@ -10,6 +10,11 @@ let
       publicKey = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
       priority = 2;
     }
+    {
+      url = "https://nix-gaming.cachix.org";
+      publicKey = "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4=";
+      priority = 3;
+    }
   ];
 in
 {
