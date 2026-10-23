@@ -6,4 +6,3 @@ scripts/mkvmerge.sh
 tapris/ngrok.txt
 ./localPackages
 .sops.yaml
-secrets
