@@ -29,6 +29,7 @@
       sops
       xdg-mime
       bluetooth
+      wiimote
       (
         {
           user,
