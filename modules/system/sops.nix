@@ -12,7 +12,10 @@
         age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
         defaultSopsFile = "/home/${user}/nixos/secrets/secrets.yaml";
         defaultSopsFormat = "yaml";
-        secrets.example-key = {
+        secrets.tv_ip = {
+          owner = user;
+        };
+        secrets.joycon_r1 = {
           owner = user;
         };
         validateSopsFiles = false;
@@ -34,7 +37,8 @@
         defaultSopsFile = "/home/${user}/nixos/secrets/secrets.yaml";
         defaultSopsFormat = "yaml";
         validateSopsFiles = false;
-        secrets."example-key" = { };
+        secrets."tv_ip" = { };
+        secrets."joycon_l1" = { };
       };
     };
 }

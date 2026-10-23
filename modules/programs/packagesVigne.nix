@@ -22,6 +22,7 @@
         localsend
         lua-language-server
         melonds
+        moltengamepad
         mpv
         nil # nix language server
         nixfmt # nix formatter
