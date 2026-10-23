@@ -65,7 +65,6 @@
               zshVigne
               spicetify
               fzf
-              sops-test
             ];
           };
         }
