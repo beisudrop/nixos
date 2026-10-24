@@ -27,7 +27,6 @@
       appimage
       fonts
       sops
-      xdg-mime
       bluetooth
       wiimote
       (
@@ -65,6 +64,7 @@
               zshVigne
               spicetify
               fzf
+              xdg-mime
             ];
           };
         }

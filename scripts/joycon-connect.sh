@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MAC1="5C:0C:E6:79:69:A3"
-MAC2="5C:0C:E6:78:9D:FF"
+MAC1="$(cat /run/secrets/joycon_l1)"
+MAC2="$(cat /run/secrets/joycon_r1)"
 
 bluetoothctl remove "$MAC1"
 bluetoothctl remove "$MAC2"

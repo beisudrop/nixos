@@ -23,7 +23,6 @@
       appimage
       fonts
       substituters
-      xdg-mime
       kde-connect
       (
         {
@@ -54,6 +53,7 @@
               qt
               zsh
               nvim
+              xdg-mime
             ];
           };
         }

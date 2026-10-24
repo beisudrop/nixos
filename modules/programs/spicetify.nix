@@ -20,7 +20,6 @@
         ];
         theme = spicePkgs.themes.dribbblish;
         colorScheme = "gruvbox-material-dark";
-        spotifyLaunchFlags = "--password-store=basic";
       };
     };
 }

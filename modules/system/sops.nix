@@ -4,6 +4,7 @@
       pkgs,
       user,
       self,
+      lib,
       ...
     }:
     {
@@ -12,12 +13,9 @@
         age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
         defaultSopsFile = "/home/${user}/nixos/secrets/secrets.yaml";
         defaultSopsFormat = "yaml";
-        secrets.tv_ip = {
+        secrets = lib.genAttrs [ "tv_ip" "joycon_r1" "joycon_l1" ] (_: {
           owner = user;
-        };
-        secrets.joycon_r1 = {
-          owner = user;
-        };
+        });
         validateSopsFiles = false;
       };
     };
