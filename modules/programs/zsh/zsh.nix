@@ -55,7 +55,7 @@
           mkdir = "mkdir -vp";
           mv = "mv -iv";
           cp = "cp -iv";
-          ls = "eza -a --icons";
+          ls = "eza -a --icons auto";
           tree = "eza --tree --icons";
           update = ''cd /home/tobias/nixos && nix flake update && git add . && sudo nixos-rebuild switch --flake && git commit -m "flake update" && git push origin main'';
         };

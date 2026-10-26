@@ -3,7 +3,7 @@
     xdg.desktopEntries.yazi-dir = {
       name = "Yazi";
       comment = "Open directory in Yazi";
-      exec = "kitty yazi %U"; # ← your terminal + yazi
+      exec = "kitty yazi %U";
       icon = "yazi";
       type = "Application";
       categories = [
@@ -11,7 +11,6 @@
         "Utility"
       ];
       mimeType = [ "inode/directory" ];
-      # Terminal=false is the default, so no need to set it
     };
 
     xdg.mimeApps = {
