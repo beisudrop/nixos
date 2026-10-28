@@ -31,7 +31,7 @@
         osu-lazer-bin
         p7zip
         perl
-        pince
+        #pince
         poppler # pdf rendering
         pwvucontrol # pipewire volume
         python3
