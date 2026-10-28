@@ -15,7 +15,7 @@
       inputs.sops-nix.nixosModules.sops
     ]
     ++ (with self.modules.nixos; [
-      substituters
+      #substituters
       base
       firefoxVigne
       vigneHardware
