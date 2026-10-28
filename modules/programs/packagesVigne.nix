@@ -40,6 +40,7 @@
         qt6Packages.qt6ct # qt control center
         resvg # svg support
         ripgrep # grep
+        ryubing
         sabnzbd # nzb download
         setxkbmap # x11 us de swap for 東方11
         sshfs # mount filesystem

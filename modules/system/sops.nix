@@ -13,7 +13,7 @@
         age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
         defaultSopsFile = "/home/${user}/nixos/secrets/secrets.yaml";
         defaultSopsFormat = "yaml";
-        secrets = lib.genAttrs [ "tv_ip" "joycon_r1" "joycon_l1" ] (_: {
+        secrets = lib.genAttrs [ "tv_ip" "joycon_r1" "joycon_l1" "gnome_keyring" ] (_: {
           owner = user;
         });
         validateSopsFiles = false;
