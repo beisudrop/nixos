@@ -175,6 +175,8 @@
           networking.firewall.allowedTCPPorts = [ 53317 ];
           networking.firewall.allowedUDPPorts = [ 53317 ];
 
+          boot.kernelParams = [ "amdgpu.runpm=0" ];
+
           system.stateVersion = "25.11";
         }
       )
