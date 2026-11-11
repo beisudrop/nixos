@@ -5,6 +5,6 @@
     }:
     {
       programs.appimage.enable = true;
-      programs.appimage.binfmt = true;
+      programs.appimage.binfmt = false; # true for squash false for dwar
     };
 }

@@ -22,6 +22,7 @@
 
     nixos.hyprland = { user, pkgs, ... }: {
       programs.hyprland.enable = true;
+      programs.hyprland.withUWSM = true; # needed to fix cachix mismatch
       services.greetd = {
         enable = true;
         settings = {
