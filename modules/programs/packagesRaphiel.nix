@@ -7,17 +7,17 @@
     {
       home.packages = with pkgs; [
         python3
-        handbrake
-        makemkv
-        cyanrip
+        #handbrake
+        #makemkv
+        #cyanrip
         ripgrep
         curl
         eza
-        ffmpeg
-        imagemagick
+        #ffmpeg
+        #imagemagick
         unrar
         unzip
-        wget
+        #wget
         xz
         zoxide
         btop
