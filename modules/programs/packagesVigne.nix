@@ -46,6 +46,7 @@
         sshfs # mount filesystem
         tesseract # ocr
         timg # terminal images
+        umbriel
         unrar
         unzip
         vscode-fhs
