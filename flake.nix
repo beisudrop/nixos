@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    pkgs-pinned.url = "github:NixOS/nixpkgs/db379a58acfef9783b46ffde2957dac397c92b85";
 
     import-tree.url = "github:denful/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";

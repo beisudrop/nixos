@@ -2,8 +2,15 @@
   flake.modules.homeManager.packagesVigne =
     {
       pkgs,
+      pkgs-pinned,
       ...
     }:
+    let
+      pkgs-pinned = import pkgs-pinned {
+        inherit (pkgs) system;
+        config.allowUnfree = true;
+      };
+    in
     {
       home.packages = with pkgs; [
         #blueman
@@ -27,7 +34,7 @@
         nil # nix language server
         nixfmt # nix formatter
         onlyoffice-desktopeditors
-        opencode
+        pkgs-pinned.opencode
         osu-lazer-bin
         p7zip
         perl
