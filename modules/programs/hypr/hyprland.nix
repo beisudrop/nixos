@@ -23,19 +23,25 @@
     nixos.hyprland = { user, pkgs, ... }: {
       programs.hyprland.enable = true;
       programs.hyprland.withUWSM = true; # needed to fix cachix mismatch
-      services.greetd = {
-        enable = true;
-        settings = {
-          initial_session = {
-            command = "${pkgs.hyprland}/bin/start-hyprland";
-            user = "${user}";
-          };
-          default_session = {
-            command = "${pkgs.tuigreet}/bin/tuigreet --cmd start-hyprland";
-            user = "greeter";
-          };
-        };
-      };
+      services.getty.autologinUser = "${user}";
+      environment.loginShellInit = ''
+        if [ "$(tty)" = "/dev/tty1" ]; then
+          start-hyprland
+        fi
+      '';
+      #services.greetd = {
+      #  enable = true;
+      #  settings = {
+      #    initial_session = {
+      #      command = "${pkgs.hyprland}/bin/start-hyprland";
+      #      user = "${user}";
+      #    };
+      #    default_session = {
+      #      command = "${pkgs.tuigreet}/bin/tuigreet --cmd start-hyprland";
+      #      user = "greeter";
+      #    };
+      #  };
+      #};
       home-manager.users."${user}".imports = [ self.modules.homeManager.hyprland ];
     };
     nixos.hyprlandUWSM = { user, pkgs, ... }: {

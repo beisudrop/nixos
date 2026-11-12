@@ -29,13 +29,17 @@
         dates = "weekly";
         options = "--delete-older-than 7d";
       };
+      services.xserver.xkb = {
+        layout = "de";
+        variant = "";
+      };
       i18n.defaultLocale = "de_DE.UTF-8";
       console = {
         font = "Lat2-Terminus16";
         useXkbConfig = true;
       };
       time.timeZone = "Europe/Berlin";
-      zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
+      zramSwap.enable = true;
       boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
       boot.loader.timeout = 0;
       networking.hostName = "${host}";
