@@ -1,14 +1,14 @@
 {
   flake.modules.homeManager.packagesVigne =
     {
+      inputs,
       pkgs,
       pkgs-pinned,
       ...
     }:
     let
-      pinnedPkgs = import pkgs-pinned {
-        inherit (pkgs) system;
-        config.allowUnfree = true;
+      pinnedPkgs = import inputs.pkgs-pinned {
+        inherit (pkgs.stdenv.hostPlatform) system;
       };
     in
     {
