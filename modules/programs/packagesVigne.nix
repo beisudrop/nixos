@@ -5,6 +5,12 @@
       pkgs-pinned,
       ...
     }:
+    let
+      pinnedPkgs = import pkgs-pinned {
+        inherit (pkgs) system;
+        config.allowUnfree = true;
+      };
+    in
     {
       home.packages = with pkgs; [
         azahar
@@ -27,7 +33,7 @@
         nil # nix language server
         nixfmt # nix formatter
         onlyoffice-desktopeditors
-        pkgs-pinned.opencode
+        pinnedPkgs.opencode
         osu-lazer-bin
         p7zip
         perl
