@@ -5,15 +5,8 @@
       pkgs-pinned,
       ...
     }:
-    let
-      pkgs-pinned = import pkgs-pinned {
-        inherit (pkgs) system;
-        config.allowUnfree = true;
-      };
-    in
     {
       home.packages = with pkgs; [
-        #blueman
         azahar
         curl
         dolphin-emu

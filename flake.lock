@@ -175,6 +175,22 @@
         "type": "github"
       }
     },
+    "pkgs-pinned": {
+      "locked": {
+        "lastModified": 1793315900,
+        "narHash": "sha256-z5lZoCwheBzMgRtfYlGLMhmPwhv1Rty16Kf269n8ctc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db379a58acfef9783b46ffde2957dac397c92b85",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db379a58acfef9783b46ffde2957dac397c92b85",
+        "type": "github"
+      }
+    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -205,6 +221,7 @@
         "import-tree": "import-tree",
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs",
+        "pkgs-pinned": "pkgs-pinned",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix"
       }
