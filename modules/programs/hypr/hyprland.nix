@@ -47,19 +47,12 @@
     nixos.hyprlandUWSM = { user, pkgs, ... }: {
       programs.hyprland.enable = true;
       programs.hyprland.withUWSM = true;
-      services.greetd = {
-        enable = true;
-        settings = {
-          initial_session = {
-            command = "uwsm start -eD Hyprland hyprland.desktop";
-            user = "${user}";
-          };
-          default_session = {
-            command = "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --no-xsession-wrapper --cmd 'uwsm start -eD Hyprland hyprland.desktop'";
-            user = "greeter";
-          };
-        };
-      };
+      services.getty.autologinUser = "${user}";
+      environment.loginShellInit = ''
+        if [ "$(tty)" = "/dev/tty1" ]; then
+          uwsm start -eD Hyprland hyprland.desktop
+        fi
+      '';
       home-manager.users."${user}".imports = [ self.modules.homeManager.hyprland ];
     };
   };

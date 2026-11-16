@@ -44,7 +44,6 @@
             imports = [
               system-minimal
               kittyTapris
-              #              hyprlandTapris
               yazi
               noctalia
               gtk

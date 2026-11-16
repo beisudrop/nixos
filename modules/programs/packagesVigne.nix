@@ -52,7 +52,6 @@
         sshfs # mount filesystem
         tesseract # ocr
         timg # terminal images
-        umbriel
         unrar
         unzip
         vscode-fhs
@@ -61,12 +60,6 @@
         xz # compression
         yt-dlp
         zoxide # cd
-        # Niri
-        # xwayland-satellite
-        wl-clipboard
-        # Hyprland
-        grim
-        slurp
       ];
     };
 }

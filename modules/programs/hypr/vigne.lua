@@ -208,7 +208,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + J", hl.dsp.layout("colresize -conf"))    -- scrolling only
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))   
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("qs -p ~/nixos/scripts/lockscreen/shell.qml"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("systemctl suspend && qs -p ~/nixos/scripts/nierlock/shell.qml"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/Screenshots/"$(date +%Y%m%d-%H%M%S)".png'))
@@ -242,13 +242,13 @@ hl.bind(mainMod .. " + DELETE",  hl.dsp.exec_cmd("playerctl previous"),   { lock
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
-local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
+--local suppressMaximizeRule = hl.window_rule({
+--
+--    name  = "suppress-maximize-events",
+--    match = { class = ".*" },
+--    suppress_event = "maximize",
+--})
+--suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
     name  = "fix-xwayland-drags",

@@ -1,6 +1,5 @@
 local colors = loadfile(os.getenv("HOME") .. "/.cache/hellwal/hypr-colors.lua")()
 
-
 ------------------
 ---- MONITORS ----
 ------------------
@@ -20,7 +19,6 @@ local terminal    = "kitty"
 local fileManager = "kitty -e yazi"
 local menu        = "noctalia msg panel-toggle launcher"
 
-
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -33,7 +31,6 @@ hl.on("hyprland.start", function ()
   -- hl.exec_cmd("wl-paste --watch cliphist -max-items 5 store")
   -- hl.exec_cmd("wl-paste --type image --watch cliphist -max-items 5 store")
 end)
-
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----

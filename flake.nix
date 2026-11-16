@@ -22,6 +22,8 @@
 
     hypr-kdeconnect-fix.url = "github:boscovn/hypr-kdeconnect-fix-flake";
     hypr-kdeconnect-fix.inputs.nixpkgs.follows = "nixpkgs";
+
+    umbriel.url = "github:noctalia-dev/umbriel/cachix"; # Do not set umbriel.inputs.nixpkgs.follows when using the binary cache.
   };
 
   outputs =
