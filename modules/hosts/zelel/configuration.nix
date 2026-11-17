@@ -100,6 +100,10 @@
 
           nix.settings = {
             tarball-ttl = 0;
+            trusted-users = [
+              "root"
+              "tobias"
+            ];
           };
           system.stateVersion = "26.05";
         }
