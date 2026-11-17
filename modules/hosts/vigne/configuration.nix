@@ -15,6 +15,7 @@
       inputs.sops-nix.nixosModules.sops
     ]
     ++ (with self.modules.nixos; [
+      ssh
       substituters
       base
       firefoxVigne

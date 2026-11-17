@@ -11,17 +11,19 @@
     };
     modules = [
       inputs.home-manager.nixosModules.home-manager
+      inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
     ]
     ++ (with self.modules.nixos; [
-      ssh
+      appimage
       base
       firefoxTapris
-      zelelHardware
-      umbriel
-      ovpn
-      appimage
       fonts
+      noctalia
+      ovpn
+      ssh
       substituters
+      umbriel
+      zelelHardware
       (
         {
           user,
@@ -40,17 +42,16 @@
           };
           home-manager.users.${user} = with self.modules.homeManager; {
             imports = [
-              system-minimal
-              kittyVigne
-              yazi
-              noctalia
-              gtk
-              zelelPackages
               fzf
-              qt
-              zsh
+              gtk
+              kittyVigne
               nvim
+              qt
+              system-minimal
               xdg-mime
+              yazi
+              zelelPackages
+              zsh
             ];
           };
         }
