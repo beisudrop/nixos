@@ -25,7 +25,7 @@
 
     umbriel.url = "github:noctalia-dev/umbriel/cachix"; # Do not set umbriel.inputs.nixpkgs.follows when using the binary cache.
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/commit/d9da8426d86bd7e937226f5ecef1df1504ead2e8";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/d9da8426d86bd7e937226f5ecef1df1504ead2e8";
     nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
   };
 
