@@ -28,7 +28,6 @@
         ...
       }:
       {
-        imports = [ inputs.umbriel.nixosModules.default ];
         programs.umbriel.enable = true;
         services.getty.autologinUser = "${user}";
         environment.loginShellInit = ''
