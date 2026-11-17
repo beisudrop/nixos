@@ -95,7 +95,9 @@
           hardware.graphics = {
             enable = true;
           };
-          boot.kernelPackages = pkgs.linuxPackages;
+
+          hardware.microsoft-surface.kernelVersion = "longterm";
+
           nix.settings = {
             tarball-ttl = 0;
           };
