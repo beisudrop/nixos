@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.nixosConfigurations.tapris = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.zelel = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       host = "zelel";
       user = "tobias";
