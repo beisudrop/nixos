@@ -19,7 +19,7 @@
       base
       firefoxVigne
       vigneHardware
-      hyprland
+      umbriel
       lanzaboote
       rtaudio
       sunshine
