@@ -24,6 +24,7 @@
       substituters
       umbriel
       zelelHardware
+      wvkbd
       (
         {
           user,

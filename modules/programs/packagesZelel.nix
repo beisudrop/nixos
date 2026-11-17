@@ -11,6 +11,8 @@
         pwvucontrol
         qt6.qtwayland
         qt6Packages.qt6ct
+        onlyoffice-desktopeditors
+        jellyfin
       ];
     };
 }
