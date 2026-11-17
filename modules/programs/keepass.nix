@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.fuzzel =
+  flake.modules.homeManager.keepass =
     {
       config,
       ...
