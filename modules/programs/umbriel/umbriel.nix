@@ -24,7 +24,6 @@
       {
         user,
         pkgs,
-        inputs,
         ...
       }:
       {

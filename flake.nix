@@ -24,6 +24,9 @@
     hypr-kdeconnect-fix.inputs.nixpkgs.follows = "nixpkgs";
 
     umbriel.url = "github:noctalia-dev/umbriel/cachix"; # Do not set umbriel.inputs.nixpkgs.follows when using the binary cache.
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

@@ -53,6 +53,7 @@
               fcitx5
               gtk
               hellwal
+              keepass
               kittyVigne
               lutris
               nvim
