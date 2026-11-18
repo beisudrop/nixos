@@ -99,6 +99,21 @@
 
           hardware.microsoft-surface.kernelVersion = "longterm";
 
+          services.iptsd = {
+            enable = true;
+            config = {
+              Contacts = {
+                SizeMin = 0.100;
+                SizeMax = 4.000;
+                AspectMin = 1.000;
+                AspectMax = 4.000;
+                ActivationThreshold = 24;
+                DeactivationThreshold = 20;
+                OrientationThresholdMax = 5;
+              };
+            };
+          };
+
           nix.settings = {
             tarball-ttl = 0;
             trusted-users = [
