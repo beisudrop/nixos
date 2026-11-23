@@ -27,6 +27,9 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/d9da8426d86bd7e937226f5ecef1df1504ead2e8";
     nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
+
+    inputs.hexecute.url = "github:m31-galaxy/Hexecute";
+    hexecute.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

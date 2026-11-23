@@ -2,6 +2,7 @@
   flake.modules.homeManager.zelelPackages =
     {
       pkgs,
+      inputs,
       ...
     }:
     {
@@ -13,6 +14,7 @@
         qt6Packages.qt6ct
         onlyoffice-desktopeditors
         jellyfin-desktop
+        inputs.hexecute.packages.${pkgs.system}.default
       ];
     };
 }
